@@ -62,8 +62,8 @@ print("Ваш новый массив \(arr)")
 // я хотел хранить числа в 16-ричной но непонял как сделать это как хранить именно 16ричное чсило а не пользоваться преобразованием 0x ?
 
 print("Задание 5\n")
-var arr1: [UInt] = []
-func addfibonacci(arr: inout [UInt]) {
+var arr1: [Double] = []
+func addfibonacci(arr: inout [Double]) {
     if arr.count == 0 {
         arr.append(0)
     } else if arr.count == 1 {
@@ -72,7 +72,7 @@ func addfibonacci(arr: inout [UInt]) {
         arr.append(arr[arr.count - 1] + arr[arr.count - 2])
     }
 }
-for _ in 0...93 {
+for _ in 0...99 {
     addfibonacci(arr: &arr1)
 }
 print(arr1)
