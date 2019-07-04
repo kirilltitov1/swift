@@ -1,7 +1,7 @@
 import UIKit
 
-//№1
-class car {
+class car: CustomStringConvertible {
+    
     enum engineMode_: String {
         case on = "engineOn"
         case off = "engineOff"
@@ -14,11 +14,18 @@ class car {
         case on = "windowsOn"
         case off = "windowsOff"
     }
+    enum sponsors_ {
+        case audi
+        case redBull
+        case tornadoEnergy
+    }
+    
     enum actions_ {
         case switchEngineMode(engineMode_)
         case switchWindowsMode(windowsMode_)
+        case changeOrderNumber(number: Int)
+        case changeSponsor(sponsors_)
     }
-    
     
     var brend: String
     var color: String
@@ -33,47 +40,78 @@ class car {
         self.engineMode = engineMode
         self.windowsMode = windowsMode
     }
+    var description: String {
+        return "\(brend)\nГод выпуска: \(machineYear)\nСостояние мотора: \(engineMode)\nСостояние окон: \(windowsMode)\n"
+    }
     
-    func actions(action: actions_) {
-        switch action {
-        case .switchEngineMode(let mode):
-            engineMode = mode
-        case .switchWindowsMode(let mode):
-            windowsMode = mode
-        }
+    func actions(action: actions_...) {
     }
 }
 
-//№2
 class trunkCar: car {
     var orderNumber: Int
-    var volume: Double
-    var truncActions_: car.actions_
-    
-    enum truncActions_ {
-        case load
-        case unload
-    }
-//    №3
-    
 
-    init(brend: String, color: String, orderNumber: Int, volume: Double, machineYear: Double, engineMode: engineMode_, windowsMode: windowsMode_) {
+    init(brend: String, color: String, orderNumber: Int, machineYear: Double, engineMode: engineMode_, windowsMode: windowsMode_) {
         self.orderNumber = orderNumber
-        self.volume = volume
         super.init(brend: brend, color: color, machineYear: machineYear, engineMode: engineMode, windowsMode: windowsMode)
+    }
+    override func actions(action: actions_...) {
+        for action_ in action {
+            switch action_ {
+            case .switchEngineMode(let mode):
+                engineMode = mode
+            case .switchWindowsMode(let mode):
+                windowsMode = mode
+            case .changeOrderNumber(let number):
+                orderNumber = number
+            default:
+                break
+            }
+        }
+    }
+    var description2: String {
+        return description + "Номер заказа: \(orderNumber)\n"
     }
 }
 
-//№2
 class sportСar: car {
-    var countOfRaces: Int
-    var sponsor: String
+    var sponsor: sponsors_
     
-//    №3
-    init(brend: String, color: String, countOfRaces: Int, sponsor: String, machineYear: Double, engineMode: engineMode_, windowsMode: windowsMode_) {
-        self.countOfRaces = countOfRaces
+    init(brend: String, color: String, sponsor: sponsors_, machineYear: Double, engineMode: engineMode_, windowsMode: windowsMode_) {
         self.sponsor = sponsor
         super.init(brend: brend, color: color, machineYear: machineYear, engineMode: engineMode, windowsMode: windowsMode)
     }
+    override func actions(action: actions_...) {
+        for action_ in action {
+            switch action_ {
+            case .switchEngineMode(let mode):
+                engineMode = mode
+            case .switchWindowsMode(let mode):
+                windowsMode = mode
+            case .changeSponsor(let sponsor_):
+                sponsor = sponsor_
+            default:
+                break
+            }
+        }
+    }
+    var description2: String {
+        return description + "Спонсор: \(sponsor)\n"
+    }
 }
 
+var vaz = trunkCar(brend: "vaz", color: "черный", orderNumber: 11, machineYear: 1999, engineMode: .off, windowsMode: .on)
+var lamb = sportСar(brend: "lamborghini", color: "orange", sponsor: .redBull, machineYear: 2019, engineMode: .on, windowsMode: .on)
+print(vaz.description2)
+print(lamb.description2)
+
+vaz.actions(action: .switchEngineMode(.off),
+                    .switchWindowsMode(.off),
+                    .changeOrderNumber(number: 90))
+
+lamb.actions(action: .switchEngineMode(.off),
+                     .switchWindowsMode(.off),
+                     .changeSponsor(.tornadoEnergy))
+
+print(vaz.description2)
+print(lamb.description2)
