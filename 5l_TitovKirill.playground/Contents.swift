@@ -13,7 +13,7 @@ protocol protocolCar {
 }
 
 
-class car: protocolCar, CustomStringConvertible {
+class car: protocolCar {
     
     var color: String
     var sponsor: sponsor_
@@ -26,6 +26,9 @@ class car: protocolCar, CustomStringConvertible {
         self.color = color
         self.sponsor = sponsor
     }
+}
+
+extension car: CustomStringConvertible {
     var description: String {
         return "Цвет машины \(color)\nСпонсор \(sponsor)\n"
     }
@@ -50,7 +53,7 @@ extension car {
 }
 
 
-class sportCar: protocolCar, CustomStringConvertible {
+class sportCar: protocolCar {
     var color: String
     var sponsor: sponsor_
     var amountOfTours: Int
@@ -65,16 +68,19 @@ class sportCar: protocolCar, CustomStringConvertible {
         self.amountOfTours = amountOfTours
     }
     
-    var description: String{
+    
+}
+extension sportCar: CustomStringConvertible {
+    var description: String {
         return "Цвет машины \(color)\nСпонсор \(sponsor)\nКол-во кругов \(amountOfTours)\n"
     }
 }
-
+    
 var car2: sportCar = sportCar(color: "Черный", sponsor: .Tornado, amountOfTours: 9)
 print(car2.description)
 
 // вообще не знаю что может быть общего между цистерной и кдассической машиной ) поэтому пусть будут пассажиры ))))))
-class trunkCar: protocolCar, CustomStringConvertible {
+class trunkCar: protocolCar {
     var color: String
     var sponsor: sponsor_
     
@@ -89,10 +95,12 @@ class trunkCar: protocolCar, CustomStringConvertible {
         self.sponsor = sponsor
         self.volume = volume
     }
-    
+}
+extension trunkCar: CustomStringConvertible {
     var description: String {
         return "Цвет машины \(color)\nСпонсор \(sponsor)\nОбьем цистерны \(volume) литров\n"
     }
 }
+
 var car3: trunkCar = trunkCar(color: "белая", sponsor: .RadBull, volume: 9000)
 print(car3.description)
