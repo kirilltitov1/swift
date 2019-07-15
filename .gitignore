@@ -4,3 +4,5 @@
 *.plist
 *.xcuserstate
 *.plist
+*.xcbkptlist
+*.xcuserstate

@@ -37,4 +37,10 @@ do {
     print("Деление на ноль")
 }
 
+do {
+    try nums1.delparam(index: 9)
+} catch Error_.outOfRange {
+    print("Выход за границы")
+}
+
 print()
