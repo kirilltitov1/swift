@@ -1,10 +1,11 @@
 import Foundation
 
-enum Error_: Error {
-    case divByZero
-    case outOfRange
-    case arrIsClean
+enum Error_: String, Error {
+    case divByZero = "Деление на ноль"
+    case outOfRange = "Выход за границы"
+    case arrIsClean = "Массив пуст"
 }
+
 
 class nums {
     var arr: [Double] = []
@@ -33,14 +34,14 @@ var nums1 : nums = nums(arr: [15.0, 56.0, 0.0, 88.0])
 
 do {
     try _ = nums1.division(a: nums1.arr[0], b: nums1.arr[2])
-} catch Error_.divByZero {
-    print("Деление на ноль")
+} catch  (let error as Error_) {
+    print("\(error.rawValue)")
 }
 
 do {
     try nums1.delparam(index: 9)
-} catch Error_.outOfRange {
-    print("Выход за границы")
+} catch (let error as Error_) {
+    print("\(error.rawValue)")
 }
 
-print()
+print(Error_.arrIsClean.rawValue)
