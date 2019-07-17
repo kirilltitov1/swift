@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  8l_TitovKirill
+//  game_snake
 //
-//  Created by Kirill Titov on 16/07/2019.
-//  Copyright © 2019 Kirill Titov. All rights reserved.
+//  Created by Shakhvorostov on 15/07/2019.
+//  Copyright © 2019 Shakhvorostov. All rights reserved.
 //
 
 import UIKit
