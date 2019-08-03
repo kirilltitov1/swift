@@ -18,19 +18,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a1o-b5-wmb">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2bN-dm-kit">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sing in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMn-ml-z9J">
+                                        <rect key="frame" x="169" y="130" width="76" height="29"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KBK-iz-dM3">
+                                        <rect key="frame" x="100" y="259" width="214" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QCm-Ct-Q81">
+                                        <rect key="frame" x="100" y="319" width="214" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hrq-xl-0gl">
+                                        <rect key="frame" x="188.5" y="379" width="37" height="30"/>
+                                        <state key="normal" title="Enter"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="hrq-xl-0gl" secondAttribute="bottom" constant="487" id="29a-nC-S8e"/>
+                                    <constraint firstItem="aMn-ml-z9J" firstAttribute="centerX" secondItem="2bN-dm-kit" secondAttribute="centerX" id="2PH-Bt-VA4"/>
+                                    <constraint firstItem="hrq-xl-0gl" firstAttribute="centerX" secondItem="2bN-dm-kit" secondAttribute="centerX" id="2gZ-eP-mMp"/>
+                                    <constraint firstItem="QCm-Ct-Q81" firstAttribute="top" secondItem="KBK-iz-dM3" secondAttribute="bottom" constant="30" id="8BV-SP-fxo"/>
+                                    <constraint firstItem="hrq-xl-0gl" firstAttribute="top" secondItem="QCm-Ct-Q81" secondAttribute="bottom" constant="30" id="M6K-lL-jBU"/>
+                                    <constraint firstItem="aMn-ml-z9J" firstAttribute="top" secondItem="2bN-dm-kit" secondAttribute="top" constant="130" id="Re0-dL-tAC"/>
+                                    <constraint firstItem="QCm-Ct-Q81" firstAttribute="width" secondItem="KBK-iz-dM3" secondAttribute="width" id="YV4-aV-Fxa"/>
+                                    <constraint firstItem="KBK-iz-dM3" firstAttribute="centerX" secondItem="2bN-dm-kit" secondAttribute="centerX" id="aDC-5k-bOx"/>
+                                    <constraint firstAttribute="trailing" secondItem="KBK-iz-dM3" secondAttribute="trailing" constant="100" id="dpG-fy-51y"/>
+                                    <constraint firstItem="QCm-Ct-Q81" firstAttribute="centerX" secondItem="2bN-dm-kit" secondAttribute="centerX" id="iij-wf-l6P"/>
+                                    <constraint firstItem="KBK-iz-dM3" firstAttribute="leading" secondItem="2bN-dm-kit" secondAttribute="leading" constant="100" id="sFR-Vg-y9H"/>
+                                    <constraint firstItem="KBK-iz-dM3" firstAttribute="top" secondItem="aMn-ml-z9J" secondAttribute="bottom" constant="100" id="yJQ-hB-I75"/>
+                                </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="a1o-b5-wmb" secondAttribute="trailing" id="Aof-QX-fiE"/>
-                            <constraint firstItem="a1o-b5-wmb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hqA-5K-t2Q"/>
-                            <constraint firstItem="a1o-b5-wmb" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="jz3-5N-nHk"/>
-                            <constraint firstAttribute="bottom" secondItem="a1o-b5-wmb" secondAttribute="bottom" id="rB9-zW-aqA"/>
+                            <constraint firstItem="2bN-dm-kit" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="B7J-6D-jmR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2bN-dm-kit" secondAttribute="trailing" id="aAN-ku-3vt"/>
+                            <constraint firstAttribute="bottom" secondItem="2bN-dm-kit" secondAttribute="bottom" id="ojA-V2-RUx"/>
+                            <constraint firstItem="2bN-dm-kit" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="rWR-fY-3SY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="scrollView" destination="2bN-dm-kit" id="PuN-gh-71E"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
