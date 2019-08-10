@@ -18,6 +18,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backGround 1page" translatesAutoresizingMaskIntoConstraints="NO" id="yzY-04-FBX">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="59P-vx-Hvd">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
@@ -77,6 +80,7 @@
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fXv-4l-rnA">
                                                 <rect key="frame" x="81.5" y="133" width="37" height="30"/>
+                                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <state key="normal" title="Enter"/>
                                             </button>
                                         </subviews>
@@ -95,8 +99,12 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="yzY-04-FBX" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="C6a-wM-r1c"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yzY-04-FBX" secondAttribute="trailing" id="Mqe-TF-fVc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="59P-vx-Hvd" secondAttribute="trailing" id="QXY-JI-wad"/>
                             <constraint firstItem="59P-vx-Hvd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="moo-Ui-OGl"/>
+                            <constraint firstAttribute="bottom" secondItem="yzY-04-FBX" secondAttribute="bottom" id="qc2-x3-vn6"/>
+                            <constraint firstItem="yzY-04-FBX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ssC-Fv-t9N"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="59P-vx-Hvd" secondAttribute="bottom" id="umW-jU-x8I"/>
                             <constraint firstItem="59P-vx-Hvd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="vMM-eq-Mma"/>
                         </constraints>
@@ -108,6 +116,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="47.826086956521742" y="20.758928571428569"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="backGround 1page" width="402" height="750"/>
+    </resources>
 </document>
