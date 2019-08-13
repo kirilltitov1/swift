@@ -1,0 +1,7 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '12.4'
+use_frameworks!
+ 
+target 'HW1' do
+pod 'Alamofire', '~> 5.0.0-beta.5'
+end
