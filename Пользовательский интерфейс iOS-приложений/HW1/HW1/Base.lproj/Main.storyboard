@@ -215,7 +215,8 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="More" id="dZG-Mp-ktT">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="dGq-qh-PdC">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="SettingsMore" width="24" id="dGq-qh-PdC">
+                            <inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="0.0"/>
                             <connections>
                                 <segue destination="z8E-UQ-G77" kind="show" id="FuB-oP-Y6p"/>
                             </connections>
@@ -335,6 +336,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="SettingsMore" width="256" height="256"/>
         <image name="backGround 1page" width="402" height="750"/>
     </resources>
 </document>
