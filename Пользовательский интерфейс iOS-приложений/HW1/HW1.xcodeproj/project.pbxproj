@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		EFBFFC142303452E0068FBB5 /* MoreList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBFFC132303452E0068FBB5 /* MoreList.swift */; };
 		EFBFFC1623036DC80068FBB5 /* SettingsGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBFFC1523036DC80068FBB5 /* SettingsGrid.swift */; };
+		EFBFFC1823036E9A0068FBB5 /* CellGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBFFC1723036E9A0068FBB5 /* CellGrid.swift */; };
 		EFF8936E22FCECC700458BAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF8936D22FCECC700458BAD /* AppDelegate.swift */; };
 		EFF8937022FCECC700458BAD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF8936F22FCECC700458BAD /* ViewController.swift */; };
 		EFF8937322FCECC700458BAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFF8937122FCECC700458BAD /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		EFBFFC132303452E0068FBB5 /* MoreList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreList.swift; sourceTree = "<group>"; };
 		EFBFFC1523036DC80068FBB5 /* SettingsGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsGrid.swift; sourceTree = "<group>"; };
+		EFBFFC1723036E9A0068FBB5 /* CellGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellGrid.swift; sourceTree = "<group>"; };
 		EFF8936A22FCECC700458BAD /* HW1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HW1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFF8936D22FCECC700458BAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFF8936F22FCECC700458BAD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				EFF8936F22FCECC700458BAD /* ViewController.swift */,
 				EFBFFC132303452E0068FBB5 /* MoreList.swift */,
 				EFBFFC1523036DC80068FBB5 /* SettingsGrid.swift */,
+				EFBFFC1723036E9A0068FBB5 /* CellGrid.swift */,
 				EFF8937122FCECC700458BAD /* Main.storyboard */,
 				EFF8937422FCECC800458BAD /* Assets.xcassets */,
 				EFF8937622FCECC800458BAD /* LaunchScreen.storyboard */,
@@ -145,6 +148,7 @@
 				EFF8937022FCECC700458BAD /* ViewController.swift in Sources */,
 				EFBFFC142303452E0068FBB5 /* MoreList.swift in Sources */,
 				EFF8936E22FCECC700458BAD /* AppDelegate.swift in Sources */,
+				EFBFFC1823036E9A0068FBB5 /* CellGrid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
