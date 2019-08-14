@@ -207,6 +207,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="c90-oV-DoL" kind="show" identifier="ShowSegue" id="gPT-oo-duE"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -227,10 +230,25 @@
             </objects>
             <point key="canvasLocation" x="4728" y="887"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--View Controller-->
+        <scene sceneID="mgF-1T-nRG">
+            <objects>
+                <viewController id="c90-oV-DoL" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nqU-k3-Rv4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="GTD-gE-TGF"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JWg-B8-oIE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5787" y="1206"/>
+        </scene>
+        <!--Settings Grid-->
         <scene sceneID="SSd-bA-Uzr">
             <objects>
-                <collectionViewController id="z8E-UQ-G77" sceneMemberID="viewController">
+                <collectionViewController id="z8E-UQ-G77" customClass="SettingsGrid" customModule="HW1" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="AOI-is-c3P">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -259,7 +277,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bJv-yq-FJX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5663.768115942029" y="886.60714285714278"/>
+            <point key="canvasLocation" x="5787" y="516"/>
         </scene>
         <!--Recommendations-->
         <scene sceneID="ebO-54-sBJ">
