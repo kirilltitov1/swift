@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		EF834CC52304BFC100FBC3AA /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF834CC42304BFC100FBC3AA /* Model.swift */; };
 		EF834CC92305877000FBC3AA /* CollectionViewControllerFromMoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF834CC82305877000FBC3AA /* CollectionViewControllerFromMoreVC.swift */; };
+		EF87568F23074F7500187B23 /* SettingsCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF87568E23074F7500187B23 /* SettingsCollectionVC.swift */; };
 		EFA6C87123061B9000768E64 /* BackgroundGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA6C87023061B9000768E64 /* BackgroundGradient.swift */; };
 		EFBFFC142303452E0068FBB5 /* MoreList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBFFC132303452E0068FBB5 /* MoreList.swift */; };
 		EFBFFC1623036DC80068FBB5 /* SettingsGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBFFC1523036DC80068FBB5 /* SettingsGrid.swift */; };
-		EFBFFC1823036E9A0068FBB5 /* CellGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBFFC1723036E9A0068FBB5 /* CellGrid.swift */; };
 		EFBFFC1B2304303F0068FBB5 /* Freinds.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBFFC1A2304303F0068FBB5 /* Freinds.swift */; };
 		EFBFFC1D230439370068FBB5 /* ForMoreClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBFFC1C230439370068FBB5 /* ForMoreClasses.swift */; };
 		EFF8936E22FCECC700458BAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF8936D22FCECC700458BAD /* AppDelegate.swift */; };
@@ -24,10 +24,10 @@
 /* Begin PBXFileReference section */
 		EF834CC42304BFC100FBC3AA /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		EF834CC82305877000FBC3AA /* CollectionViewControllerFromMoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewControllerFromMoreVC.swift; sourceTree = "<group>"; };
+		EF87568E23074F7500187B23 /* SettingsCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCollectionVC.swift; sourceTree = "<group>"; };
 		EFA6C87023061B9000768E64 /* BackgroundGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundGradient.swift; sourceTree = "<group>"; };
 		EFBFFC132303452E0068FBB5 /* MoreList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreList.swift; sourceTree = "<group>"; };
 		EFBFFC1523036DC80068FBB5 /* SettingsGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsGrid.swift; sourceTree = "<group>"; };
-		EFBFFC1723036E9A0068FBB5 /* CellGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellGrid.swift; sourceTree = "<group>"; };
 		EFBFFC1A2304303F0068FBB5 /* Freinds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Freinds.swift; sourceTree = "<group>"; };
 		EFBFFC1C230439370068FBB5 /* ForMoreClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForMoreClasses.swift; sourceTree = "<group>"; };
 		EFF8936A22FCECC700458BAD /* HW1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HW1.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,6 +55,43 @@
 				EF834CC42304BFC100FBC3AA /* Model.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		EF87568923074BD400187B23 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EFA6C87023061B9000768E64 /* BackgroundGradient.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EF87568A23074C3F00187B23 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EFBFFC1C230439370068FBB5 /* ForMoreClasses.swift */,
+				EFF8936F22FCECC700458BAD /* ViewController.swift */,
+				EF87568D23074CB400187B23 /* Tabbles */,
+				EF87568B23074C8D00187B23 /* CollectionsVC */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		EF87568B23074C8D00187B23 /* CollectionsVC */ = {
+			isa = PBXGroup;
+			children = (
+				EF87568E23074F7500187B23 /* SettingsCollectionVC.swift */,
+				EFBFFC1523036DC80068FBB5 /* SettingsGrid.swift */,
+				EF834CC82305877000FBC3AA /* CollectionViewControllerFromMoreVC.swift */,
+			);
+			path = CollectionsVC;
+			sourceTree = "<group>";
+		};
+		EF87568D23074CB400187B23 /* Tabbles */ = {
+			isa = PBXGroup;
+			children = (
+				EFBFFC132303452E0068FBB5 /* MoreList.swift */,
+			);
+			path = Tabbles;
 			sourceTree = "<group>";
 		};
 		EFBFFC19230430020068FBB5 /* ClassesForShowSegue */ = {
@@ -85,14 +122,9 @@
 			isa = PBXGroup;
 			children = (
 				EFF8936D22FCECC700458BAD /* AppDelegate.swift */,
-				EFF8936F22FCECC700458BAD /* ViewController.swift */,
-				EFBFFC132303452E0068FBB5 /* MoreList.swift */,
-				EFBFFC1523036DC80068FBB5 /* SettingsGrid.swift */,
-				EFA6C87023061B9000768E64 /* BackgroundGradient.swift */,
+				EF87568A23074C3F00187B23 /* Controllers */,
+				EF87568923074BD400187B23 /* Views */,
 				EF834CC32304BFA700FBC3AA /* Model */,
-				EFBFFC1723036E9A0068FBB5 /* CellGrid.swift */,
-				EFBFFC1C230439370068FBB5 /* ForMoreClasses.swift */,
-				EF834CC82305877000FBC3AA /* CollectionViewControllerFromMoreVC.swift */,
 				EFBFFC19230430020068FBB5 /* ClassesForShowSegue */,
 				EFF8937122FCECC700458BAD /* Main.storyboard */,
 				EFF8937922FCECC800458BAD /* Info.plist */,
@@ -175,7 +207,7 @@
 				EFF8937022FCECC700458BAD /* ViewController.swift in Sources */,
 				EFBFFC142303452E0068FBB5 /* MoreList.swift in Sources */,
 				EFF8936E22FCECC700458BAD /* AppDelegate.swift in Sources */,
-				EFBFFC1823036E9A0068FBB5 /* CellGrid.swift in Sources */,
+				EF87568F23074F7500187B23 /* SettingsCollectionVC.swift in Sources */,
 				EF834CC92305877000FBC3AA /* CollectionViewControllerFromMoreVC.swift in Sources */,
 				EFBFFC1D230439370068FBB5 /* ForMoreClasses.swift in Sources */,
 				EFBFFC1B2304303F0068FBB5 /* Freinds.swift in Sources */,
