@@ -10,7 +10,9 @@ import UIKit
 
 private let reuseIdentifier = "SettingsCell"
 
-var dateForSettings:[String] = ["Notification"]
+var dateForSettings:[String] = ["Notification", "Don`t disturb", "Account",
+                                "Appearance", "Appearance", "Privacy", "Black List",
+                                "Balance", "Music Subscription", "About Application"]
 
 class SettingsCollectionVC: UIViewController {
 
@@ -19,23 +21,22 @@ class SettingsCollectionVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        collectionView.dataSource = self
-//        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.delegate = self
     }
     
 }
 
 extension SettingsCollectionVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (collectionView.frame.width - 100) / 2, height: 300)
+        return CGSize(width: (collectionView.frame.width) / 2.2, height: 300)
     }
 }
 
 extension SettingsCollectionVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 11
-        
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

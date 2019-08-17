@@ -16,6 +16,7 @@
 		EFBFFC1623036DC80068FBB5 /* SettingsGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBFFC1523036DC80068FBB5 /* SettingsGrid.swift */; };
 		EFBFFC1B2304303F0068FBB5 /* Freinds.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBFFC1A2304303F0068FBB5 /* Freinds.swift */; };
 		EFBFFC1D230439370068FBB5 /* ForMoreClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBFFC1C230439370068FBB5 /* ForMoreClasses.swift */; };
+		EFE5D911230863920094AF70 /* FreindsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE5D910230863920094AF70 /* FreindsTableVC.swift */; };
 		EFF8936E22FCECC700458BAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF8936D22FCECC700458BAD /* AppDelegate.swift */; };
 		EFF8937022FCECC700458BAD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF8936F22FCECC700458BAD /* ViewController.swift */; };
 		EFF8937322FCECC700458BAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFF8937122FCECC700458BAD /* Main.storyboard */; };
@@ -32,6 +33,7 @@
 		EFBFFC1523036DC80068FBB5 /* SettingsGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsGrid.swift; sourceTree = "<group>"; };
 		EFBFFC1A2304303F0068FBB5 /* Freinds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Freinds.swift; sourceTree = "<group>"; };
 		EFBFFC1C230439370068FBB5 /* ForMoreClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForMoreClasses.swift; sourceTree = "<group>"; };
+		EFE5D910230863920094AF70 /* FreindsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreindsTableVC.swift; sourceTree = "<group>"; };
 		EFF8936A22FCECC700458BAD /* HW1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HW1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFF8936D22FCECC700458BAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFF8936F22FCECC700458BAD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				EFBFFC132303452E0068FBB5 /* MoreList.swift */,
+				EFE5D912230863A80094AF70 /* Freinds */,
 			);
 			path = Tabbles;
 			sourceTree = "<group>";
@@ -127,6 +130,14 @@
 				EFBFFC1A2304303F0068FBB5 /* Freinds.swift */,
 			);
 			path = ClassesForShowSegue;
+			sourceTree = "<group>";
+		};
+		EFE5D912230863A80094AF70 /* Freinds */ = {
+			isa = PBXGroup;
+			children = (
+				EFE5D910230863920094AF70 /* FreindsTableVC.swift */,
+			);
+			path = Freinds;
 			sourceTree = "<group>";
 		};
 		EFF8936122FCECC700458BAD = {
@@ -233,6 +244,7 @@
 				EFBFFC1623036DC80068FBB5 /* SettingsGrid.swift in Sources */,
 				EFF8937022FCECC700458BAD /* ViewController.swift in Sources */,
 				EFBFFC142303452E0068FBB5 /* MoreList.swift in Sources */,
+				EFE5D911230863920094AF70 /* FreindsTableVC.swift in Sources */,
 				EFF8936E22FCECC700458BAD /* AppDelegate.swift in Sources */,
 				EF87568F23074F7500187B23 /* SettingsCollectionVC.swift in Sources */,
 				EF834CC92305877000FBC3AA /* CollectionViewControllerFromMoreVC.swift in Sources */,
