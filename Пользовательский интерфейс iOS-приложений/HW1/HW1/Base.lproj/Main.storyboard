@@ -283,31 +283,65 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xpG-mm-Idb">
-                                    <size key="itemSize" width="96" height="85"/>
+                                    <size key="itemSize" width="161" height="206"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SettingsCell" id="9Vf-di-8oi">
-                                        <rect key="frame" x="0.0" y="0.0" width="96" height="85"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SettingsCell" id="9Vf-di-8oi" customClass="SettingsCell" customModule="HW1" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="161" height="206"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="96" height="85"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="161" height="206"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MEL-Z3-ou3">
-                                                    <rect key="frame" x="8" y="52" width="80" height="25"/>
-                                                    <state key="normal" title="Button"/>
+                                                    <rect key="frame" x="8" y="52" width="145" height="146"/>
                                                 </button>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="M6P-mT-9Jo">
+                                                    <rect key="frame" x="0.0" y="0.0" width="161" height="196"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wyb-u6-YLO">
+                                                            <rect key="frame" x="0.0" y="0.0" width="161" height="35"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="Wyb-u6-YLO" secondAttribute="height" multiplier="161:35" id="Tis-0l-xMv"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ttv-dQ-247">
+                                                            <rect key="frame" x="0.0" y="35" width="161" height="161"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="ttv-dQ-247" secondAttribute="height" multiplier="1:1" id="o4g-Le-mMr"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="ttv-dQ-247" firstAttribute="leading" secondItem="M6P-mT-9Jo" secondAttribute="leading" id="98j-BX-DLn"/>
+                                                        <constraint firstItem="ttv-dQ-247" firstAttribute="top" secondItem="Wyb-u6-YLO" secondAttribute="bottom" id="LKF-1c-B9F"/>
+                                                        <constraint firstAttribute="bottom" secondItem="ttv-dQ-247" secondAttribute="bottom" id="QbA-p5-sna"/>
+                                                        <constraint firstAttribute="trailing" secondItem="ttv-dQ-247" secondAttribute="trailing" id="TtL-zo-tzl"/>
+                                                        <constraint firstItem="Wyb-u6-YLO" firstAttribute="width" secondItem="ttv-dQ-247" secondAttribute="width" id="VeK-1Z-iTW"/>
+                                                        <constraint firstItem="Wyb-u6-YLO" firstAttribute="top" secondItem="M6P-mT-9Jo" secondAttribute="top" id="hmR-6i-aAm"/>
+                                                    </constraints>
+                                                </stackView>
                                             </subviews>
                                         </view>
                                         <constraints>
                                             <constraint firstItem="MEL-Z3-ou3" firstAttribute="leading" secondItem="9Vf-di-8oi" secondAttribute="leadingMargin" id="RjZ-UA-GTg"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="MEL-Z3-ou3" secondAttribute="bottom" id="jUs-eC-KH6"/>
                                             <constraint firstItem="MEL-Z3-ou3" firstAttribute="top" secondItem="9Vf-di-8oi" secondAttribute="topMargin" id="lKP-ex-C3E"/>
+                                            <constraint firstItem="M6P-mT-9Jo" firstAttribute="leading" secondItem="9Vf-di-8oi" secondAttribute="leading" id="mtl-pH-QkI"/>
+                                            <constraint firstItem="M6P-mT-9Jo" firstAttribute="top" secondItem="9Vf-di-8oi" secondAttribute="top" id="sMm-LI-WbO"/>
+                                            <constraint firstAttribute="trailing" secondItem="M6P-mT-9Jo" secondAttribute="trailing" id="vUU-5y-oJK"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="MEL-Z3-ou3" secondAttribute="trailing" id="vgw-5Q-cr5"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="button" destination="MEL-Z3-ou3" id="5Dd-O9-Lod"/>
+                                            <outlet property="image" destination="ttv-dQ-247" id="w2e-I7-T9H"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -321,6 +355,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="73j-ia-YEg"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="hPh-55-Kdz" id="uIy-tS-JtI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vnw-ik-htp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
