@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF44F1B62308AF7400EE00CC /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF44F1B52308AF7400EE00CC /* Cell.swift */; };
 		EF834CC52304BFC100FBC3AA /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF834CC42304BFC100FBC3AA /* Model.swift */; };
 		EF834CC92305877000FBC3AA /* CollectionViewControllerFromMoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF834CC82305877000FBC3AA /* CollectionViewControllerFromMoreVC.swift */; };
 		EF87568F23074F7500187B23 /* SettingsCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF87568E23074F7500187B23 /* SettingsCollectionVC.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EF44F1B52308AF7400EE00CC /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		EF834CC42304BFC100FBC3AA /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		EF834CC82305877000FBC3AA /* CollectionViewControllerFromMoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewControllerFromMoreVC.swift; sourceTree = "<group>"; };
 		EF87568E23074F7500187B23 /* SettingsCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCollectionVC.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				EFE5D910230863920094AF70 /* FreindsTableVC.swift */,
+				EF44F1B52308AF7400EE00CC /* Cell.swift */,
 			);
 			path = Freinds;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 				EFBFFC142303452E0068FBB5 /* MoreList.swift in Sources */,
 				EFE5D911230863920094AF70 /* FreindsTableVC.swift in Sources */,
 				EFF8936E22FCECC700458BAD /* AppDelegate.swift in Sources */,
+				EF44F1B62308AF7400EE00CC /* Cell.swift in Sources */,
 				EF87568F23074F7500187B23 /* SettingsCollectionVC.swift in Sources */,
 				EF834CC92305877000FBC3AA /* CollectionViewControllerFromMoreVC.swift in Sources */,
 				EFBFFC1D230439370068FBB5 /* ForMoreClasses.swift in Sources */,

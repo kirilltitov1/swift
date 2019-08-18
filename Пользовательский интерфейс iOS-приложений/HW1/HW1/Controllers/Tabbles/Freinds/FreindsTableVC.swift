@@ -34,10 +34,12 @@ class FreindsTableVC: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FreindCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FreindCell", for: indexPath) as! Cell
         
+//        cell.imageView?.image = UIImage(named: freindsList[indexPath.row])
+//        cell.textLabel?.text = freindsList[indexPath.row]
         
-        
+        cell.setFreind(freindsList[indexPath.row], UIImage(named: freindsList[indexPath.row])!)
 
         return cell
     }
