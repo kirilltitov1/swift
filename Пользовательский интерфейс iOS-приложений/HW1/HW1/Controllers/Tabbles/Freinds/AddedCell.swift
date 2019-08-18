@@ -1,5 +1,5 @@
 //
-//  Cell.swift
+//  AddedCell.swift
 //  HW1
 //
 //  Created by Kirill Titov on 18/08/2019.
@@ -8,24 +8,23 @@
 
 import UIKit
 
-class Cell: UITableViewCell {
+class AddedCell: UITableViewCell {
 
-    @IBOutlet var label: UILabel!
-    @IBOutlet var freindImage: UIImageView!
+    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var freindImage: UIImageView!
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-    
+
     func setFreind(_ Name: String, _ Image: UIImage) {
         label?.text = Name
         freindImage?.image = Image
     }
-
+    
 }
