@@ -391,6 +391,7 @@
                                                 <state key="normal" image="Like"/>
                                                 <connections>
                                                     <action selector="like:" destination="soE-sc-JQh" eventType="touchUpInside" id="fdd-6a-OaI"/>
+                                                    <action selector="likePressed" destination="y2Q-Km-VCy" eventType="touchUpInside" id="QAy-4j-5qF"/>
                                                 </connections>
                                             </button>
                                         </subviews>

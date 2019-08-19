@@ -12,10 +12,10 @@ class Account: UIView {
 
     @IBOutlet weak var myImage: UIImageView!
     @IBOutlet weak var counter: UILabel!
+    @IBAction func likePressed() {
+        counter.text = String(Int(counter.text!)! + 1)
+    }
     
-//    вот метод по которому яхотел изменять счетчик но поч то кнопка не привязывается на действие не могли бы вы еще раз поакзать плиз, заранее спс 
-    
-//    counter.text = String(Int(counter.text!)! + 1)
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
