@@ -14,18 +14,13 @@ class AddedFreindsTabelVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-    }
-
-    
-    @IBAction func addFreindButtonTab(_ sender: Any) {
-        performSegue(withIdentifier: "ToSelect", sender: nil)
     }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! FreindsTableVC
-        vc.delegate = self
+        if let vc = segue.destination as? FreindsTableVC {
+            vc.delegate = self
+        }
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -46,6 +41,7 @@ class AddedFreindsTabelVC: UITableViewController {
 extension AddedFreindsTabelVC: FreindsTableVCDelegate {
     func vc(_ vc: FreindsTableVC, didSelectFreind freind: String) {
         addedFreinds.append(freind)
+        tableView.reloadData()
         print("123123")
     }
 }

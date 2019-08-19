@@ -9,18 +9,20 @@
 import UIKit
 
 protocol FreindsTableVCDelegate {
-    func vc(_ vc: FreindsTableVC, didSelectFreind freind: String )
+    func vc(_ vc: FreindsTableVC, didSelectFreind freind: String)
 }
 
 class FreindsTableVC: UITableViewController {
 
     var delegate: FreindsTableVCDelegate?
     
-    var addedFreinds: [String] = []
     var freindsList: [String] = ["Casper", "Dinosaur", "Hare", "Narwhal", "Pikachu", "PolarBear", "Tiger"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.dataSource = self
+        tableView.delegate = self
     }
 
 
@@ -30,7 +32,7 @@ class FreindsTableVC: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FreindCell", for: indexPath) as! Cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FreindCell") as! Cell
         
         cell.setFreind(freindsList[indexPath.row], UIImage(named: freindsList[indexPath.row])!)
 
@@ -40,6 +42,6 @@ class FreindsTableVC: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let freind = freindsList[indexPath.row]
         delegate?.vc(self, didSelectFreind: freind)
+        self.navigationController?.popViewController(animated: true)
     }
- 
 }

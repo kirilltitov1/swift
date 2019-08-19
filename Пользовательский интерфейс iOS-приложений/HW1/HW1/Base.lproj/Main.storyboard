@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fzb-73-o3X">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="don-hZ-fGL">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -356,6 +356,76 @@
             </objects>
             <point key="canvasLocation" x="6631.884057971015" y="1971.4285714285713"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="yDE-tb-sge">
+            <objects>
+                <viewController id="don-hZ-fGL" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jt6-Nn-gag">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y2Q-Km-VCy" customClass="Account" customModule="HW1" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="300"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pikachu" translatesAutoresizingMaskIntoConstraints="NO" id="W4u-Jc-Ohp">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="252.00000000000006"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9An-VL-uBS">
+                                        <rect key="frame" x="310" y="252" width="104" height="48"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rn2-kC-msG">
+                                                <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="likeCounter"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="rn2-kC-msG" secondAttribute="height" multiplier="1:1" id="xml-R6-oeN"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aNC-Mz-PtU">
+                                                <rect key="frame" x="56" y="0.0" width="48" height="48"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="aNC-Mz-PtU" secondAttribute="height" multiplier="1:1" id="Oje-bW-as2"/>
+                                                </constraints>
+                                                <state key="normal" image="Like"/>
+                                                <connections>
+                                                    <action selector="like:" destination="soE-sc-JQh" eventType="touchUpInside" id="fdd-6a-OaI"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="9An-VL-uBS" secondAttribute="bottom" id="6i0-Dl-n9L"/>
+                                    <constraint firstItem="W4u-Jc-Ohp" firstAttribute="top" secondItem="y2Q-Km-VCy" secondAttribute="top" id="D2f-Gc-uS5"/>
+                                    <constraint firstItem="9An-VL-uBS" firstAttribute="top" secondItem="W4u-Jc-Ohp" secondAttribute="bottom" id="NtW-m3-LJS"/>
+                                    <constraint firstItem="W4u-Jc-Ohp" firstAttribute="leading" secondItem="y2Q-Km-VCy" secondAttribute="leading" id="cT2-cu-CvR"/>
+                                    <constraint firstAttribute="trailing" secondItem="W4u-Jc-Ohp" secondAttribute="trailing" id="eUg-qT-O2u"/>
+                                    <constraint firstAttribute="trailing" secondItem="9An-VL-uBS" secondAttribute="trailing" id="pDN-U0-Nl6"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="counter" destination="rn2-kC-msG" id="Z3U-lN-92R"/>
+                                    <outlet property="myImage" destination="W4u-Jc-Ohp" id="LFt-wI-PlG"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="HPK-cu-Bsq" firstAttribute="trailing" secondItem="y2Q-Km-VCy" secondAttribute="trailing" id="8pO-ac-LTC"/>
+                            <constraint firstItem="y2Q-Km-VCy" firstAttribute="top" secondItem="HPK-cu-Bsq" secondAttribute="top" id="T8m-QD-ZC3"/>
+                            <constraint firstItem="y2Q-Km-VCy" firstAttribute="leading" secondItem="HPK-cu-Bsq" secondAttribute="leading" id="XqC-Z3-sDn"/>
+                            <constraint firstItem="HPK-cu-Bsq" firstAttribute="bottom" secondItem="y2Q-Km-VCy" secondAttribute="bottom" constant="518" id="zhL-Gy-Ckm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HPK-cu-Bsq"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eg6-9k-me1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="soE-sc-JQh" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="5524.6376811594209" y="2706.6964285714284"/>
+        </scene>
         <!--Settings CollectionVC-->
         <scene sceneID="xac-tj-eiR">
             <objects>
@@ -576,8 +646,8 @@
                     <navigationItem key="navigationItem" id="rvB-0X-kGt">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="HZy-jU-eJF">
                             <connections>
-                                <action selector="addFreindButtonTab:" destination="MQi-IG-AEa" id="7Cm-sL-sfP"/>
-                                <segue destination="xMW-Cx-htK" kind="show" identifier="ToSelect" id="ZDU-6C-OAt"/>
+                                <action selector="addFreindButtonTab:" destination="MQi-IG-AEa" id="BS3-j9-kGx"/>
+                                <segue destination="xMW-Cx-htK" kind="show" identifier="" id="rD9-0S-xLN"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -606,6 +676,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Like" width="48" height="48"/>
+        <image name="Pikachu" width="211" height="239"/>
         <image name="SettingsMore" width="256" height="256"/>
     </resources>
 </document>
