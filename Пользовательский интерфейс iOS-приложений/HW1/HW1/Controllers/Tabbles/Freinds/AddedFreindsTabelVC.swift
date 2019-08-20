@@ -18,11 +18,8 @@ class AddedFreindsTabelVC: UITableViewController {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ToFreindsList" {
             if let vc = segue.destination as? FreindsTableVC {
                 vc.delegate = self
-                
-            }
         }
     }
 
@@ -38,7 +35,6 @@ class AddedFreindsTabelVC: UITableViewController {
 
         return cell
     }
-
 }
 
 extension AddedFreindsTabelVC: FreindsTableVCDelegate {
