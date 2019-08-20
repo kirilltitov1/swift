@@ -648,7 +648,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="HZy-jU-eJF">
                             <connections>
                                 <action selector="addFreindButtonTab:" destination="MQi-IG-AEa" id="BS3-j9-kGx"/>
-                                <segue destination="xMW-Cx-htK" kind="show" identifier="" id="rD9-0S-xLN"/>
+                                <segue destination="xMW-Cx-htK" kind="show" identifier="ToFreindsList" id="rD9-0S-xLN"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

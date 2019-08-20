@@ -18,8 +18,11 @@ class AddedFreindsTabelVC: UITableViewController {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination as? FreindsTableVC {
-            vc.delegate = self
+        if segue.identifier == "ToFreindsList" {
+            if let vc = segue.destination as? FreindsTableVC {
+                vc.delegate = self
+                
+            }
         }
     }
 
