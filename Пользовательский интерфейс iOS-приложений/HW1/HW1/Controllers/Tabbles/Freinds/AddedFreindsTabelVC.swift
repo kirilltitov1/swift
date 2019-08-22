@@ -41,6 +41,5 @@ extension AddedFreindsTabelVC: FreindsTableVCDelegate {
     func vc(_ vc: FreindsTableVC, didSelectFreind freind: String) {
         addedFreinds.append(freind)
         tableView.reloadData()
-        print("123123")
     }
 }
