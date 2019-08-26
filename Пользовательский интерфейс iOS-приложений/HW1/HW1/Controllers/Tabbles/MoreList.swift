@@ -8,13 +8,15 @@
 
 import UIKit
 
+var dateForMore: [String] = ["Ur profile", "Freinds", "Community", "Music", "Bookmarks", "Photo", "Video", "Broadcasts", "Liked", "Podcasts", "Documents", "Money transfers", "Help"]
+
+
 class MoreList: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
  
-    var dateForMore: [String] = ["Ur profile", "Freinds", "Community", "Music", "Bookmarks", "Photo", "Video", "Broadcasts", "Liked", "Podcasts", "Documents", "Money transfers", "Help"]
     
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
