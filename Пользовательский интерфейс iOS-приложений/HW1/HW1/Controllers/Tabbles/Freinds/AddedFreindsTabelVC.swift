@@ -10,7 +10,7 @@ import UIKit
 
 class AddedFreindsTabelVC: UITableViewController {
 
-    var addedFreinds: [String] = []
+    var addedFreinds: [[String]] = [["A"], ["B"], ["C"], ["D"], ["E"], ["F"], ["G"], ["H"], ["I"], ["J"], ["K"], ["L"], ["M"], ["N"], ["O"], ["P"], ["Q"], ["R"], ["S"], ["T"], ["U"], ["V"], ["V"], ["X"], ["Y"], ["Z"]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +31,7 @@ class AddedFreindsTabelVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AddedFreindCell", for: indexPath) as! AddedCell
 
-        cell.setFreind(addedFreinds[indexPath.row], UIImage(named: addedFreinds[indexPath.row])!)
+        cell.setFreind(addedFreinds[indexPath.section][indexPath.row+1], UIImage(named: addedFreinds[indexPath.section][indexPath.row+1])!)
 
         return cell
     }
@@ -39,7 +39,13 @@ class AddedFreindsTabelVC: UITableViewController {
 
 extension AddedFreindsTabelVC: FreindsTableVCDelegate {
     func vc(_ vc: FreindsTableVC, didSelectFreind freind: String) {
-        addedFreinds.append(freind)
+// не понимаю как сдесь реализовать логику добавления друзей, я хотел бы что бы друг добавлялся и потом сортировалася подмассив в который был добавлен друг оно работает если сделать не массив массивов а простой массив я проверял 
+//        for i in 0...addedFreinds.count {
+//            if Character(addedFreinds[i][0]) == freind[0] {
+//
+//            }
+//        }
+//        addedFreinds.append(freind)
         tableView.reloadData()
     }
 }

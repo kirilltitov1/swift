@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EF0E7524230CBEA800B006FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF0E7523230CBEA700B006FC /* Assets.xcassets */; };
 		EF44F1B62308AF7400EE00CC /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF44F1B52308AF7400EE00CC /* Cell.swift */; };
+		EF4787EA2312E59100307E3F /* FreindCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4787E82312E59100307E3F /* FreindCell.swift */; };
+		EF4787EB2312E59100307E3F /* FreindCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF4787E92312E59100307E3F /* FreindCell.xib */; };
 		EF7E12D82309C3EC0038F549 /* AddedFreindsTabelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7E12D72309C3EC0038F549 /* AddedFreindsTabelVC.swift */; };
 		EF7E12DA2309C4050038F549 /* AddedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7E12D92309C4050038F549 /* AddedCell.swift */; };
 		EF834CC52304BFC100FBC3AA /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF834CC42304BFC100FBC3AA /* Model.swift */; };
@@ -21,6 +22,7 @@
 		EFBFFC1623036DC80068FBB5 /* SettingsGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBFFC1523036DC80068FBB5 /* SettingsGrid.swift */; };
 		EFBFFC1B2304303F0068FBB5 /* Freinds.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBFFC1A2304303F0068FBB5 /* Freinds.swift */; };
 		EFBFFC1D230439370068FBB5 /* ForMoreClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBFFC1C230439370068FBB5 /* ForMoreClasses.swift */; };
+		EFD584762312D8DE002C15F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFD584752312D8DE002C15F0 /* Assets.xcassets */; };
 		EFE5D911230863920094AF70 /* FreindsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE5D910230863920094AF70 /* FreindsTableVC.swift */; };
 		EFF8936E22FCECC700458BAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF8936D22FCECC700458BAD /* AppDelegate.swift */; };
 		EFF8937022FCECC700458BAD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF8936F22FCECC700458BAD /* ViewController.swift */; };
@@ -28,9 +30,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EF0E7523230CBEA700B006FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
-		EF0E7525230CBEB000B006FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF44F1B52308AF7400EE00CC /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		EF4787E82312E59100307E3F /* FreindCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreindCell.swift; sourceTree = "<group>"; };
+		EF4787E92312E59100307E3F /* FreindCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FreindCell.xib; sourceTree = "<group>"; };
 		EF7E12D72309C3EC0038F549 /* AddedFreindsTabelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddedFreindsTabelVC.swift; sourceTree = "<group>"; };
 		EF7E12D92309C4050038F549 /* AddedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddedCell.swift; sourceTree = "<group>"; };
 		EF834CC42304BFC100FBC3AA /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
@@ -43,6 +45,7 @@
 		EFBFFC1523036DC80068FBB5 /* SettingsGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsGrid.swift; sourceTree = "<group>"; };
 		EFBFFC1A2304303F0068FBB5 /* Freinds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Freinds.swift; sourceTree = "<group>"; };
 		EFBFFC1C230439370068FBB5 /* ForMoreClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForMoreClasses.swift; sourceTree = "<group>"; };
+		EFD584752312D8DE002C15F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EFE5D910230863920094AF70 /* FreindsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreindsTableVC.swift; sourceTree = "<group>"; };
 		EFF8936A22FCECC700458BAD /* HW1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HW1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFF8936D22FCECC700458BAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +65,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EF13E9932313560C00AD79FC /* ViewC */ = {
+			isa = PBXGroup;
+			children = (
+				EFBFFC1C230439370068FBB5 /* ForMoreClasses.swift */,
+				EFF8936F22FCECC700458BAD /* ViewController.swift */,
+			);
+			path = ViewC;
+			sourceTree = "<group>";
+		};
+		EF4787E72312E53D00307E3F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				EF4787E82312E59100307E3F /* FreindCell.swift */,
+				EF4787E92312E59100307E3F /* FreindCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		EF834CC32304BFA700FBC3AA /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -82,8 +103,7 @@
 		EF87568A23074C3F00187B23 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				EFBFFC1C230439370068FBB5 /* ForMoreClasses.swift */,
-				EFF8936F22FCECC700458BAD /* ViewController.swift */,
+				EF13E9932313560C00AD79FC /* ViewC */,
 				EF87568D23074CB400187B23 /* Tabbles */,
 				EF87568B23074C8D00187B23 /* CollectionsVC */,
 			);
@@ -102,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				EFBFFC132303452E0068FBB5 /* MoreList.swift */,
+				EF4787E72312E53D00307E3F /* Cells */,
 				EFE5D912230863A80094AF70 /* Freinds */,
 			);
 			path = Tabbles;
@@ -156,7 +177,7 @@
 		EFF8936122FCECC700458BAD = {
 			isa = PBXGroup;
 			children = (
-				EF0E7523230CBEA700B006FC /* Assets.xcassets */,
+				EFD584752312D8DE002C15F0 /* Assets.xcassets */,
 				EFF8936C22FCECC700458BAD /* HW1 */,
 				EFF8936B22FCECC700458BAD /* Products */,
 			);
@@ -180,7 +201,6 @@
 				EFBFFC19230430020068FBB5 /* ClassesForShowSegue */,
 				EFF8937122FCECC700458BAD /* Main.storyboard */,
 				EFF8937922FCECC800458BAD /* Info.plist */,
-				EF0E7525230CBEB000B006FC /* Assets.xcassets */,
 			);
 			path = HW1;
 			sourceTree = "<group>";
@@ -243,8 +263,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF0E7524230CBEA800B006FC /* Assets.xcassets in Resources */,
+				EFD584762312D8DE002C15F0 /* Assets.xcassets in Resources */,
 				EFF8937322FCECC700458BAD /* Main.storyboard in Resources */,
+				EF4787EB2312E59100307E3F /* FreindCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +286,7 @@
 				EF44F1B62308AF7400EE00CC /* Cell.swift in Sources */,
 				EF87568F23074F7500187B23 /* SettingsCollectionVC.swift in Sources */,
 				EF834CC92305877000FBC3AA /* CollectionViewControllerFromMoreVC.swift in Sources */,
+				EF4787EA2312E59100307E3F /* FreindCell.swift in Sources */,
 				EFBFFC1D230439370068FBB5 /* ForMoreClasses.swift in Sources */,
 				EFBFFC1B2304303F0068FBB5 /* Freinds.swift in Sources */,
 				EF7E12D82309C3EC0038F549 /* AddedFreindsTabelVC.swift in Sources */,

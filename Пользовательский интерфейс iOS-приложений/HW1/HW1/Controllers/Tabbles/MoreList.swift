@@ -43,13 +43,21 @@ class MoreList: UITableViewController {
         return 40
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if dateForMore[indexPath.row] == "Freinds" {
+//      как исправить этот варнинг ?
+        let viewController = storyboard?.instantiateViewController(withIdentifier: "freindsListVC") as! UIViewController
+        self.present(viewController, animated: true)
+        }
+    }
+    
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AfterMoreSegue" {
             if let indexRow = self.tableView.indexPathForSelectedRow {
                 let ForMoreClasses = segue.destination as! ForMoreClasses
                 ForMoreClasses.MoreTitle = dateForMore[indexRow.row]
-                
+//              как сделать исключение на френдов ? а то оно сначала на дефолт прыгает а потом куда надо
             }
         }
     }
