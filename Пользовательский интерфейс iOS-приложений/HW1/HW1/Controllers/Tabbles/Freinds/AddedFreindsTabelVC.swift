@@ -53,7 +53,11 @@ class AddedFreindsTabelVC: UITableViewController {
 
 extension AddedFreindsTabelVC: FreindsTableVCDelegate {
     func vc(_ vc: FreindsTableVC, didSelectFreind freind: String) {
+<<<<<<< HEAD
         // мне кажется моя реализация выглядит оч костыльно аименно 58 строка сравнение 2 строк не понимаю поч не сравнивается через == 
+=======
+// не понимаю как сдесь реализовать логику добавления друзей, я хотел бы что бы друг добавлялся и потом сортировалася подмассив в который был добавлен друг оно работает если сделать не массив массивов а простой массив я проверял 
+>>>>>>> develop
         for i in 0...addedFreinds.count-1 {
             if addedFreinds[i][0].first == freind.first {
                 if arrayContains(needle: freind, arrhaystack: addedFreinds[i]) == false {
