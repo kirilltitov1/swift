@@ -33,7 +33,6 @@ class BackgroundGradient: UIView {
         gradientLayer.locations = [startLocation as NSNumber, endLocation as NSNumber]
         gradientLayer.colors = [startColor.cgColor, endColor.cgColor]
         
-//        gradientLayer.shouldRasterize = true
         
         gradientLayer.startPoint = startPoint
         gradientLayer.endPoint = endPoint

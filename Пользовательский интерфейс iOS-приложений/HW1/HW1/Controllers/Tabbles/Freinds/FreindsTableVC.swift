@@ -16,11 +16,7 @@ class FreindsTableVC: UITableViewController {
 
     var delegate: FreindsTableVCDelegate?
     
-    var freindsList: [String] = ["Narwhal", "Pikachu", "PolarBear", "Tiger"]
-    
     var arrENFreindsList: [[String]] = [["A"], ["B"], ["C", "Casper"], ["D", "Dinosaur"], ["E"], ["F"], ["G"], ["H", "Hare"], ["I"], ["J"], ["K"], ["L"], ["M"], ["N", "Narwhal"], ["O"], ["P", "Pikachu", "PolarBear"], ["Q"], ["R"], ["S"], ["T", "Tiger"], ["U"], ["V"], ["V"], ["X"], ["Y"], ["Z"]]
-
-    var sectionCount = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()

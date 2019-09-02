@@ -20,14 +20,12 @@ class MoreList: UITableViewController {
     
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return dateForMore.count
     }
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        
         
         cell.imageView?.image = UIImage(named: dateForMore[indexPath.row])
         
@@ -46,8 +44,8 @@ class MoreList: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if dateForMore[indexPath.row] == "Freinds" {
 //      как исправить этот варнинг ?
-        let viewController = storyboard?.instantiateViewController(withIdentifier: "freindsListVC") as! UIViewController
-        self.present(viewController, animated: true)
+            let viewController = storyboard?.instantiateViewController(withIdentifier: "freindsListVC")
+        self.present(viewController!, animated: true)
         }
     }
     
@@ -57,7 +55,6 @@ class MoreList: UITableViewController {
             if let indexRow = self.tableView.indexPathForSelectedRow {
                 let ForMoreClasses = segue.destination as! ForMoreClasses
                 ForMoreClasses.MoreTitle = dateForMore[indexRow.row]
-//              как сделать исключение на френдов ? а то оно сначала на дефолт прыгает а потом куда надо
             }
         }
     }

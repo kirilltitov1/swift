@@ -10,12 +10,16 @@
 		EF44F1B62308AF7400EE00CC /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF44F1B52308AF7400EE00CC /* Cell.swift */; };
 		EF4787EA2312E59100307E3F /* FreindCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4787E82312E59100307E3F /* FreindCell.swift */; };
 		EF4787EB2312E59100307E3F /* FreindCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF4787E92312E59100307E3F /* FreindCell.xib */; };
+		EF5FF3A82319922500549DA7 /* TopNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5FF3A62319922500549DA7 /* TopNewsCell.swift */; };
+		EF5FF3A92319922500549DA7 /* TopNewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF5FF3A72319922500549DA7 /* TopNewsCell.xib */; };
+		EF5FF3AB23199A4200549DA7 /* NewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5FF3AA23199A4200549DA7 /* NewsVC.swift */; };
 		EF7E12D82309C3EC0038F549 /* AddedFreindsTabelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7E12D72309C3EC0038F549 /* AddedFreindsTabelVC.swift */; };
 		EF7E12DA2309C4050038F549 /* AddedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7E12D92309C4050038F549 /* AddedCell.swift */; };
 		EF834CC52304BFC100FBC3AA /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF834CC42304BFC100FBC3AA /* Model.swift */; };
 		EF834CC92305877000FBC3AA /* CollectionViewControllerFromMoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF834CC82305877000FBC3AA /* CollectionViewControllerFromMoreVC.swift */; };
 		EF87568F23074F7500187B23 /* SettingsCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF87568E23074F7500187B23 /* SettingsCollectionVC.swift */; };
 		EF875694230763A900187B23 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF875693230763A900187B23 /* SettingsCell.swift */; };
+		EF8A554C231ABBE3006B90D7 /* NewsCollectionV.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8A554B231ABBE3006B90D7 /* NewsCollectionV.swift */; };
 		EFA2C4EC2314ACBF009CC6D7 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA2C4EB2314ACBF009CC6D7 /* Functions.swift */; };
 		EFA6C87123061B9000768E64 /* BackgroundGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA6C87023061B9000768E64 /* BackgroundGradient.swift */; };
 		EFB31893230AA62B001F2464 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB31892230AA62B001F2464 /* Account.swift */; };
@@ -34,12 +38,16 @@
 		EF44F1B52308AF7400EE00CC /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		EF4787E82312E59100307E3F /* FreindCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreindCell.swift; sourceTree = "<group>"; };
 		EF4787E92312E59100307E3F /* FreindCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FreindCell.xib; sourceTree = "<group>"; };
+		EF5FF3A62319922500549DA7 /* TopNewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNewsCell.swift; sourceTree = "<group>"; };
+		EF5FF3A72319922500549DA7 /* TopNewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopNewsCell.xib; sourceTree = "<group>"; };
+		EF5FF3AA23199A4200549DA7 /* NewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsVC.swift; sourceTree = "<group>"; };
 		EF7E12D72309C3EC0038F549 /* AddedFreindsTabelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddedFreindsTabelVC.swift; sourceTree = "<group>"; };
 		EF7E12D92309C4050038F549 /* AddedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddedCell.swift; sourceTree = "<group>"; };
 		EF834CC42304BFC100FBC3AA /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		EF834CC82305877000FBC3AA /* CollectionViewControllerFromMoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewControllerFromMoreVC.swift; sourceTree = "<group>"; };
 		EF87568E23074F7500187B23 /* SettingsCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCollectionVC.swift; sourceTree = "<group>"; };
 		EF875693230763A900187B23 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		EF8A554B231ABBE3006B90D7 /* NewsCollectionV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCollectionV.swift; sourceTree = "<group>"; };
 		EFA2C4EB2314ACBF009CC6D7 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		EFA6C87023061B9000768E64 /* BackgroundGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundGradient.swift; sourceTree = "<group>"; };
 		EFB31892230AA62B001F2464 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
@@ -85,6 +93,17 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		EF5FF3A5231991B800549DA7 /* NewsVC */ = {
+			isa = PBXGroup;
+			children = (
+				EF5FF3AA23199A4200549DA7 /* NewsVC.swift */,
+				EF8A554B231ABBE3006B90D7 /* NewsCollectionV.swift */,
+				EF5FF3A62319922500549DA7 /* TopNewsCell.swift */,
+				EF5FF3A72319922500549DA7 /* TopNewsCell.xib */,
+			);
+			path = NewsVC;
+			sourceTree = "<group>";
+		};
 		EF834CC32304BFA700FBC3AA /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,7 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				EFBFFC132303452E0068FBB5 /* MoreList.swift */,
-				EF4787E72312E53D00307E3F /* Cells */,
+				EF5FF3A5231991B800549DA7 /* NewsVC */,
 				EFE5D912230863A80094AF70 /* Freinds */,
 			);
 			path = Tabbles;
@@ -168,6 +187,7 @@
 		EFE5D912230863A80094AF70 /* Freinds */ = {
 			isa = PBXGroup;
 			children = (
+				EF4787E72312E53D00307E3F /* Cells */,
 				EFE5D910230863920094AF70 /* FreindsTableVC.swift */,
 				EF44F1B52308AF7400EE00CC /* Cell.swift */,
 				EF7E12D72309C3EC0038F549 /* AddedFreindsTabelVC.swift */,
@@ -266,6 +286,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF5FF3A92319922500549DA7 /* TopNewsCell.xib in Resources */,
 				EFD584762312D8DE002C15F0 /* Assets.xcassets in Resources */,
 				EFF8937322FCECC700458BAD /* Main.storyboard in Resources */,
 				EF4787EB2312E59100307E3F /* FreindCell.xib in Resources */,
@@ -283,12 +304,15 @@
 				EFF8937022FCECC700458BAD /* ViewController.swift in Sources */,
 				EFBFFC142303452E0068FBB5 /* MoreList.swift in Sources */,
 				EF7E12DA2309C4050038F549 /* AddedCell.swift in Sources */,
+				EF8A554C231ABBE3006B90D7 /* NewsCollectionV.swift in Sources */,
 				EFE5D911230863920094AF70 /* FreindsTableVC.swift in Sources */,
 				EFB31893230AA62B001F2464 /* Account.swift in Sources */,
 				EFF8936E22FCECC700458BAD /* AppDelegate.swift in Sources */,
 				EF44F1B62308AF7400EE00CC /* Cell.swift in Sources */,
 				EF87568F23074F7500187B23 /* SettingsCollectionVC.swift in Sources */,
+				EF5FF3AB23199A4200549DA7 /* NewsVC.swift in Sources */,
 				EF834CC92305877000FBC3AA /* CollectionViewControllerFromMoreVC.swift in Sources */,
+				EF5FF3A82319922500549DA7 /* TopNewsCell.swift in Sources */,
 				EF4787EA2312E59100307E3F /* FreindCell.swift in Sources */,
 				EFA2C4EC2314ACBF009CC6D7 /* Functions.swift in Sources */,
 				EFBFFC1D230439370068FBB5 /* ForMoreClasses.swift in Sources */,

@@ -22,7 +22,6 @@ class Account: UIView {
         
         
         let radius: CGFloat = rect.midX - 10
-//        guard let content = UIGraphicsGetCurrentContext() else {return}
         
         self.layer.shadowPath = UIBezierPath(roundedRect: rect, cornerRadius: radius).cgPath
         myImage.layer.shadowColor = UIColor.darkGray.cgColor

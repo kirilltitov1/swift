@@ -16,7 +16,6 @@ class FreindCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -37,8 +36,8 @@ class FreindCell: UITableViewCell {
     override func layoutIfNeeded() {
         super.layoutIfNeeded()
         
-        freindImage.clipsToBounds = true
         freindImage.layer.cornerRadius = freindImage.frame.width/2
+        freindImage.clipsToBounds = true
     }
     
         

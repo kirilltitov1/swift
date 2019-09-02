@@ -12,15 +12,41 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var scrollViewBackend: UIScrollView!
     
+    @IBOutlet weak var topLabelConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var loginLabel: UILabel!
+    @IBOutlet weak var loginTextField: UITextField!
+    @IBOutlet weak var passwordLabel: UILabel!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var enterButton: UIButton!
+    
+    
+    var animationFlag: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        topLabelConstraint.constant = -30
     }
 
     override func viewWillAppear(_ animated: Bool) {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHidden(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if !animationFlag {
+            animationFlag = true
+            
+            self.view.layoutIfNeeded()
+            UIView.animate(withDuration: 0.3,
+                           delay: 1,
+                           animations: {
+                            self.topLabelConstraint.constant = 40
+                            self.view.layoutIfNeeded()
+            })
+        }
     }
     
     @objc func keyboardWasShown(notification: Notification) {

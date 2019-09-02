@@ -8,28 +8,32 @@
 
 import UIKit
 
+protocol AddedFreindsTableVCDelegate {
+    var freindsCount: Int { get set }
+}
+
 class AddedFreindsTabelVC: UITableViewController {
+    
+    var delegate: AddedFreindsTableVCDelegate?
 
     var addedFreinds: [[String]] = [["A"], ["B"], ["C"], ["D"], ["E"], ["F"], ["G"], ["H"], ["I"], ["J"], ["K"], ["L"], ["M"], ["N"], ["O"], ["P"], ["Q"], ["R"], ["S"], ["T"], ["U"], ["V"], ["V"], ["X"], ["Y"], ["Z"]]
     
+    var freindsCount = 0
     
     func arrayContains(needle: String, arrhaystack: [String]) -> Bool{
         return arrhaystack.contains(needle);
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if let vc = segue.destination as? FreindsTableVC {
-                vc.delegate = self
+        if let vc = segue.destination as? FreindsTableVC {
+            vc.delegate = self
         }
     }
 
-    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return addedFreinds.count
     }
@@ -38,7 +42,6 @@ class AddedFreindsTabelVC: UITableViewController {
         return addedFreinds[section].count-1
     }
     
-
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AddedFreindCell", for: indexPath) as! AddedCell
 
@@ -61,6 +64,8 @@ extension AddedFreindsTabelVC: FreindsTableVCDelegate {
                     addedFreinds[i].append(freind)
                     addedFreinds[i].sort()
                     
+                    freindsCount += 1
+                    
                     self.tableView.reloadData()
                     
                     break
@@ -81,5 +86,4 @@ extension AddedFreindsTabelVC: FreindsTableVCDelegate {
             return addedFreinds[section][0]
         }
     }
-    
 }
