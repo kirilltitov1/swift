@@ -13,6 +13,8 @@ protocol AddedFreindsTableVCDelegate {
 }
 
 class AddedFreindsTabelVC: UITableViewController {
+    @IBOutlet weak var height: NSLayoutConstraint!
+    
     
     var delegate: AddedFreindsTableVCDelegate?
 
@@ -51,6 +53,19 @@ class AddedFreindsTabelVC: UITableViewController {
 
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        UIView.animate(withDuration: 0.5,
+                       delay: 0,
+                       usingSpringWithDamping: 0.5,
+                       initialSpringVelocity: 0.5,
+                       options: [],
+                       animations: {
+//                        let cell = tableView.dequeueReusableCell(withIdentifier: "freindCell") as! AddedCell?
+                        
+//                        cell.freindImage.frame.size.height = cell.freindImage.frame.size.height/1.3
+        })
+    }
 }
 
 
@@ -78,7 +93,7 @@ extension AddedFreindsTabelVC: FreindsTableVCDelegate {
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
         //        че то я не понял как сделать полупрозрачность
-        //        tableView.layer.backgroundColor?.alpha.
+//                tableView.layer.backgroundColor?.alpha = 0.5
         
         if addedFreinds[section].count == 1 {
             return nil

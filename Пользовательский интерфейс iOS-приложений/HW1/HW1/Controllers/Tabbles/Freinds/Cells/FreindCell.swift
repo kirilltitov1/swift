@@ -12,6 +12,7 @@ class FreindCell: UITableViewCell {
         
     @IBOutlet var label: UILabel!
     @IBOutlet var freindImage: UIImageView!
+    @IBOutlet weak var weight: NSLayoutConstraint!
     
     
     override func awakeFromNib() {
@@ -38,6 +39,18 @@ class FreindCell: UITableViewCell {
         
         freindImage.layer.cornerRadius = freindImage.frame.width/2
         freindImage.clipsToBounds = true
+    }
+    
+    func imageAnimate() {
+        self.layoutIfNeeded()
+        UIView.animate(withDuration: 0.5,
+                       delay: 0,
+                       usingSpringWithDamping: CGFloat(0.5),
+                       initialSpringVelocity: CGFloat(0),
+                       options: [],
+                       animations: {
+                        self.weight.constant = self.freindImage.frame.width/1.3
+        })
     }
     
         

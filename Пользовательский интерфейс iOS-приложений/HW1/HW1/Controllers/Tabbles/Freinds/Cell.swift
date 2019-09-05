@@ -10,9 +10,8 @@ import UIKit
 
 class Cell: UITableViewCell {
 
-    @IBOutlet var label: UILabel!
-    @IBOutlet var freindImage: UIImageView!
-    
+    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var freindImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,12 +25,16 @@ class Cell: UITableViewCell {
         super.layoutIfNeeded()
         
         freindImage.clipsToBounds = true
-        freindImage.layer.cornerRadius = freindImage.frame.height/2
+        freindImage.layer.cornerRadius = 25
     }
     
     func setFreind(_ Name: String, _ Image: UIImage) {
         label?.text = Name
         freindImage?.image = Image
+    }
+    
+    func chageSizeFrame(_ ratio: CGFloat) {
+        
     }
 
 }

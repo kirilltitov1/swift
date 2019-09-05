@@ -20,6 +20,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var enterButton: UIButton!
     
+    @IBOutlet weak var indecator1: UILabel!
+    @IBOutlet weak var indecator2: UILabel!
+    @IBOutlet weak var indecator3: UILabel!
+    
     
     var animationFlag: Bool = false
     
@@ -27,12 +31,38 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         topLabelConstraint.constant = -30
+        self.loginLabel.alpha = 0
+        self.loginTextField.alpha = 0
+        self.passwordLabel.alpha = 0
+        self.passwordTextField.alpha = 0
+        self.enterButton.alpha = 0
+        
+        indecator1.layer.cornerRadius = indecator1.frame.height/2
+        indecator2.layer.cornerRadius = indecator1.frame.height/2
+        indecator3.layer.cornerRadius = indecator1.frame.height/2
+        
+        indecator1.layer.masksToBounds = true
+        indecator2.layer.masksToBounds = true
+        indecator3.layer.masksToBounds = true
+        
+        self.indecator1.alpha = 0.2
+        self.indecator2.alpha = 0.2
+        self.indecator3.alpha = 0.2
     }
 
     override func viewWillAppear(_ animated: Bool) {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHidden(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
+        
+    }
+
+    
+    override func loadViewIfNeeded() {
+        super.loadViewIfNeeded()
+        
+        indecator1.clipsToBounds = true
+        indecator1.layer.cornerRadius = indecator1.frame.height/2
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -44,8 +74,33 @@ class ViewController: UIViewController {
                            delay: 1,
                            animations: {
                             self.topLabelConstraint.constant = 40
-                            self.view.layoutIfNeeded()
-            })
+                            self.view.layoutIfNeeded()})
+            {_ in
+                self.view.layoutIfNeeded()
+                UIView.animate(withDuration: 0.4,
+                               animations: {
+                                self.loginLabel.alpha = 1
+                                self.loginTextField.alpha = 1
+                                self.passwordLabel.alpha = 1
+                                self.passwordTextField.alpha = 1
+                                self.enterButton.alpha = 1
+                                self.view.layoutIfNeeded()})}
+            
+            UIView.animate(withDuration: 0.6,
+                           animations: {
+                            self.indecator1.alpha = 1})
+            {_ in
+                UIView.animate(withDuration: 0.6,
+                               animations: {
+                                self.indecator2.alpha = 1
+                })
+                {_ in
+                    UIView.animate(withDuration: 0.6,
+                                   animations: {
+                                    self.indecator3.alpha = 1
+                    })
+                }
+            }
         }
     }
     

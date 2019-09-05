@@ -46,6 +46,11 @@ class FreindsTableVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "freindCell") as! FreindCell
+        
+        cell.imageAnimate()
+        
         let freind = arrENFreindsList[indexPath.section][indexPath.row+1]
         delegate?.vc(self, didSelectFreind: freind)
         self.navigationController?.popViewController(animated: true)
@@ -61,5 +66,9 @@ class FreindsTableVC: UITableViewController {
         } else {
             return arrENFreindsList[section][0]
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
     }
 }
