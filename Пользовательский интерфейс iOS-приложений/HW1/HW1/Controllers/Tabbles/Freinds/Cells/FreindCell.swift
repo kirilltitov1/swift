@@ -49,7 +49,8 @@ class FreindCell: UITableViewCell {
                        initialSpringVelocity: CGFloat(0),
                        options: [],
                        animations: {
-                        self.weight.constant = self.freindImage.frame.width/1.3
+                        self.weight.constant = self.freindImage.frame.width/5
+                        self.layoutIfNeeded()
         })
     }
     
