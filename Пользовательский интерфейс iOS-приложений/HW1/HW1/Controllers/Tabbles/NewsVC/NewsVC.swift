@@ -13,7 +13,7 @@ class NewsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.
+//        self.
     }
     
 
