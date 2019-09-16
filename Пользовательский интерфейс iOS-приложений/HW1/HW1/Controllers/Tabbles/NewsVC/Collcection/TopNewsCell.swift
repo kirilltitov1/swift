@@ -36,8 +36,8 @@ class TopNewsCell: UICollectionViewCell {
     }
     
     
-    func setFreind(_ Image: UIImage) {
-        imageFreind?.image = Image
+    func setFreindImageFromCell(_ Image: UIImage) {
+        self.imageFreind?.image = Image
     }
     
 }

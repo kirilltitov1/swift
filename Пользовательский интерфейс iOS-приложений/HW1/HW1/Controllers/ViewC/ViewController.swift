@@ -26,6 +26,7 @@ class ViewController: UIViewController {
     
     
     var animationFlag: Bool = false
+    let personSessia = Session.instance
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +58,10 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHidden(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        
+        loginTextField.text = personSessia.login
+        passwordTextField.text = personSessia.password
     }
 
     
