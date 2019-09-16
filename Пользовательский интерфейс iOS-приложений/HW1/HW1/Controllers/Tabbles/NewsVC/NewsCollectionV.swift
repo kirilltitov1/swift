@@ -28,13 +28,6 @@ class NewsCollectionV: UICollectionView {
 
 extension NewsCollectionV: UICollectionViewDataSource {
     
-    override func register(_ nib: UINib?, forCellWithReuseIdentifier identifier: String) {
-        register(UINib(nibName: "TopNewsCell", bundle: nil), forCellWithReuseIdentifier: "topNewsHystoryCell")
-    }
-    
-    
-    
-    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 71

@@ -29,7 +29,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    }
+    
+    
+    override func viewDidLayoutSubviews() {
         topLabelConstraint.constant = -30
         self.loginLabel.alpha = 0
         self.loginTextField.alpha = 0
@@ -49,12 +52,11 @@ class ViewController: UIViewController {
         self.indecator2.alpha = 0.2
         self.indecator3.alpha = 0.2
     }
+    
 
     override func viewWillAppear(_ animated: Bool) {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHidden(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-        
-        
     }
 
     

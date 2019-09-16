@@ -30,6 +30,12 @@ class TopNewsCell: UICollectionViewCell {
         imageFreind.clipsToBounds = true
     }
     
+    
+    func setColorFromCell(_ color: UIColor) {
+        self.backgroundColor = color
+    }
+    
+    
     func setFreind(_ Image: UIImage) {
         imageFreind?.image = Image
     }

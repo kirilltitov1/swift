@@ -623,10 +623,10 @@
             </objects>
             <point key="canvasLocation" x="4694.202898550725" y="886.60714285714278"/>
         </scene>
-        <!--View Controller-->
+        <!--NewsVC-->
         <scene sceneID="k6e-YS-9k3">
             <objects>
-                <viewController id="gSj-nb-2Pt" sceneMemberID="viewController">
+                <viewController id="gSj-nb-2Pt" customClass="NewsVC" customModule="HW1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9ni-2U-nx1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -683,6 +683,10 @@
                         <viewLayoutGuide key="safeArea" id="6sQ-Tk-uN4"/>
                     </view>
                     <navigationItem key="navigationItem" id="k1e-Dc-IXd"/>
+                    <connections>
+                        <outlet property="collectionV" destination="6QB-St-dZY" id="wSb-hC-vcu"/>
+                        <outlet property="tableV" destination="Oj0-pe-hGX" id="vxH-k9-RqC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r7j-k9-fsO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
