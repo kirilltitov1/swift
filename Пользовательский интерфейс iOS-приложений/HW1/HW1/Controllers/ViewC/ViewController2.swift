@@ -1,0 +1,150 @@
+//
+//  ViewController2.swift
+//  HW1
+//
+//  Created by Kirill Titov on 22/09/2019.
+//  Copyright © 2019 Kirill Titov. All rights reserved.
+//
+
+import UIKit
+import WebKit
+import Alamofire
+
+class ViewController2: UIViewController {
+    
+    var session = Session.instance
+
+    @IBOutlet weak var webView: WKWebView! {
+        didSet {
+            webView.navigationDelegate = self
+        }
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        var urlComponents = URLComponents()
+        urlComponents.scheme = "https"
+        urlComponents.host = "oauth.vk.com"
+        urlComponents.path = "/authorize"
+        urlComponents.queryItems = [
+            URLQueryItem(name: "client_id", value: "7144201"),
+            URLQueryItem(name: "display", value: "mobile"),
+            URLQueryItem(name: "redirect_uri", value: "https://oauth.vk.com/blank.html"),
+        URLQueryItem(name: "scope", value: "262150"),
+        URLQueryItem(name: "response_type", value: "token"),
+        URLQueryItem(name: "v", value: "5.68") ]
+        let request = URLRequest(url: urlComponents.url!)
+        
+        webView.load(request)
+    }
+}
+
+
+extension ViewController2 {
+    
+    
+    
+}
+
+
+extension ViewController2: WKNavigationDelegate {
+    
+    
+    func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
+        guard let url = navigationResponse.response.url,
+            url.path == "/blank.html",
+            let fragment = url.fragment
+            
+            else {
+                decisionHandler(.allow)
+                return
+            }
+        
+        let params = fragment
+            .components(separatedBy: "&")
+            .map{ $0.components(separatedBy: "=") }
+            .reduce([String: String] ()) { result, param in
+                var dict = result
+                let key = param[0]
+                let value = param[1]
+                dict[key] = value
+                return dict
+        }
+        
+        let token = params["access_token"]
+        
+        session.token = token!
+        
+        print(session.token)
+        decisionHandler(.cancel)
+        loadNameFreindsList()
+        loadPhotosList()
+        loadGroups()
+        loadSearchGroupByQ()
+    }
+}
+
+
+extension ViewController2 {
+
+    func loadNameFreindsList() {
+        let method = "/method"
+        let METHOD_NAME = "/friends.get"
+        
+        let PARAMETERS: Parameters = ["fields": "nickname",
+                                      "access_token": session.token,
+                                      "v": session.apiVersion
+        ]
+        
+        let url = session.vkURL + method + METHOD_NAME
+//            + "?fields=nickname" + "&access_token=" + session.token + "&v=" + session.apiVersion
+        
+//        print(PARAMETERS)
+        
+        Alamofire.request(url, method: .get, parameters: PARAMETERS).responseJSON {response in
+            print(response.value ?? "")
+        }
+    }
+    
+    
+    func loadPhotosList() {
+        let METHOD_NAME = "/photos.get"
+        let PARAMETERS: Parameters = ["extended": "0",
+                                     "access_token": session.token,
+                                     "v": session.apiVersion,
+                                     "album_id": "wall"
+        ]
+        let url = session.vkURL + session.vkMethod + METHOD_NAME
+        Alamofire.request(url, method: .get, parameters: PARAMETERS).responseJSON {response in
+            print(response.value ?? "")
+        }
+    }
+    
+    
+    func loadGroups() {
+        let METHOD_NAME = "/groups.get"
+        let PARAMETERS: Parameters = ["extended": "0",
+                                     "access_token": session.token,
+                                     "v": session.apiVersion
+        ]
+        let url = session.vkURL + session.vkMethod + METHOD_NAME
+        Alamofire.request(url, method: .get, parameters: PARAMETERS).responseJSON {response in
+            print(response.value ?? "")
+        }
+    }
+    
+    
+    func loadSearchGroupByQ() {
+        let METHOD_NAME = "/groups.search"
+        let PARAMETERS: Parameters = ["q": "Music",
+                                      "offset": "3",
+                                      "count": "3",
+                                      "access_token": session.token,
+                                      "v": session.apiVersion
+        ]
+        let url = session.vkURL + session.vkMethod + METHOD_NAME
+        Alamofire.request(url, method: .get, parameters: PARAMETERS).responseJSON {response in
+            print(response.value ?? "")
+        }
+    }
+}
