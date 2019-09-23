@@ -40,13 +40,6 @@ class ViewController2: UIViewController {
 }
 
 
-extension ViewController2 {
-    
-    
-    
-}
-
-
 extension ViewController2: WKNavigationDelegate {
     
     
@@ -77,29 +70,25 @@ extension ViewController2: WKNavigationDelegate {
         
         print(session.token)
         decisionHandler(.cancel)
-        loadNameFreindsList()
+//        loadNameFriendsList()
         loadPhotosList()
         loadGroups()
-        loadSearchGroupByQ()
+//        loadSearchGroupByQ()
     }
 }
 
 
 extension ViewController2 {
 
-    func loadNameFreindsList() {
-        let method = "/method"
+    func loadNameFriendsList() {
         let METHOD_NAME = "/friends.get"
-        
+
         let PARAMETERS: Parameters = ["fields": "nickname",
                                       "access_token": session.token,
                                       "v": session.apiVersion
         ]
         
-        let url = session.vkURL + method + METHOD_NAME
-//            + "?fields=nickname" + "&access_token=" + session.token + "&v=" + session.apiVersion
-        
-//        print(PARAMETERS)
+        let url = session.vkURL + session.vkMethod + METHOD_NAME
         
         Alamofire.request(url, method: .get, parameters: PARAMETERS).responseJSON {response in
             print(response.value ?? "")
@@ -115,8 +104,15 @@ extension ViewController2 {
                                      "album_id": "wall"
         ]
         let url = session.vkURL + session.vkMethod + METHOD_NAME
-        Alamofire.request(url, method: .get, parameters: PARAMETERS).responseJSON {response in
-            print(response.value ?? "")
+        Alamofire.request(url, method: .get, parameters: PARAMETERS).responseData {response in
+            guard let data = response.value else { return }
+            
+            do {
+                let photos = try JSONDecoder().decode([Photo].self, from: data)
+                print(photos)
+            } catch {
+                print(error)
+            }
         }
     }
     
@@ -128,8 +124,15 @@ extension ViewController2 {
                                      "v": session.apiVersion
         ]
         let url = session.vkURL + session.vkMethod + METHOD_NAME
-        Alamofire.request(url, method: .get, parameters: PARAMETERS).responseJSON {response in
-            print(response.value ?? "")
+        Alamofire.request(url, method: .get, parameters: PARAMETERS).responseData {response in
+        guard let data = response.value else { return }
+        
+        do {
+            let groups = try JSONDecoder().decode([Group].self, from: data)
+            print(groups)
+        } catch {
+            print(error)
+        }
         }
     }
     
