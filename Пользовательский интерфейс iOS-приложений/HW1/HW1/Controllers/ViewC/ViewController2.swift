@@ -71,8 +71,8 @@ extension ViewController2: WKNavigationDelegate {
         print(session.token)
         decisionHandler(.cancel)
 //        loadNameFriendsList()
-        loadPhotosList()
-//        loadGroups()
+//        loadPhotosList()
+        loadGroups()
 //        loadSearchGroupByQ()
     }
 }
@@ -109,8 +109,8 @@ extension ViewController2 {
             guard let items = response.value else { return }
             
             do {
-                let photos = try JSONDecoder().decode(PhotoResponse.self, from: items)
-                print(photos.response.items[1].sizes)
+                let photos = try JSONDecoder().decode(Photo.self, from: items)
+                print(photos.response.items[0].sizes[0].url)
             } catch {
                 print(error)
             }
@@ -126,17 +126,15 @@ extension ViewController2 {
         ]
         let url = session.vkURL + session.vkMethod + METHOD_NAME
         Alamofire.request(url, method: .get, parameters: PARAMETERS).responseData {response in
-        guard let data = response.value else { return }
-        
-        do {
-            let groups = try JSONDecoder().decode(Group.self, from: data)
             
-            var groupClass = GroupClass(count: groups.response.count, items: groups.response.items)
-            
-            print(groups)
-        } catch {
-            print(error)
-        }
+            guard let items = response.value else { return }
+                
+            do {
+                let groups = try JSONDecoder().decode(GroupResponse.self, from: items)
+                print(groups.items)
+            } catch {
+                print(error)
+            }
         }
     }
     

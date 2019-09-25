@@ -9,23 +9,13 @@
 import Foundation
 
 
-struct Group: Codable {
+class Group: Codable {
     let response: GroupResponse
 }
 
 
-struct GroupResponse: Codable {
-    let count: Int
-    let items: [Int]
+class GroupResponse: NSObject, Codable {
+    let count = 0
+    let items: [Int] = []
 }
 
-
-class GroupClass {
-    let count: Int
-    let items: [Int]
-    
-    init(count: Int, items: [Int]) {
-        self.count = count
-        self.items = items
-    }
-}
