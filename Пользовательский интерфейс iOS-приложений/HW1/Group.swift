@@ -10,6 +10,22 @@ import Foundation
 
 
 struct Group: Codable {
-    var count: Int
-    var items: [Int]
+    let response: GroupResponse
+}
+
+
+struct GroupResponse: Codable {
+    let count: Int
+    let items: [Int]
+}
+
+
+class GroupClass {
+    let count: Int
+    let items: [Int]
+    
+    init(count: Int, items: [Int]) {
+        self.count = count
+        self.items = items
+    }
 }

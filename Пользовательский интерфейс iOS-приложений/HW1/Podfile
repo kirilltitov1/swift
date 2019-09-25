@@ -8,6 +8,7 @@ target 'HW1' do
   use_frameworks!
 
   pod 'Alamofire'
+  pod 'RealmSwift'
   
   # Pods for HW1
 

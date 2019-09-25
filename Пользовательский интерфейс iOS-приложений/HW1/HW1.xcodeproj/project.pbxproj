@@ -48,7 +48,7 @@
 		04FB21CB84335AC7D05516D4 /* Pods-HW1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HW1.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HW1/Pods-HW1.debug.xcconfig"; sourceTree = "<group>"; };
 		375392D4F1088C9C48326E1E /* Pods_HW1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HW1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDD67B0C7E238E03CF02C5D8 /* Pods-HW1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HW1.release.xcconfig"; path = "Pods/Target Support Files/Pods-HW1/Pods-HW1.release.xcconfig"; sourceTree = "<group>"; };
-		EF0D3C6B2337D965006F7F78 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
+		EF0D3C6B2337D965006F7F78 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; wrapsLines = 1; };
 		EF0D3C6D2337E4D1006F7F78 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		EF14378E232F6F2900B7F80F /* NewsVC+UIVollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewsVC+UIVollectionViewDataSource.swift"; sourceTree = "<group>"; };
 		EF143791232F774B00B7F80F /* NewsVC+UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewsVC+UITableViewDataSource.swift"; sourceTree = "<group>"; };
@@ -394,10 +394,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-HW1/Pods-HW1-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
