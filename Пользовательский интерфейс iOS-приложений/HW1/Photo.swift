@@ -10,12 +10,12 @@ import Foundation
 
 
 class Photo: Codable {
-    let response: PhotoResponse
+    var response: PhotoResponse
 }
 
 
 class PhotoResponse: Codable {
-    let items: [PhotoItems]
+    var items: [PhotoItems]
 }
 
 

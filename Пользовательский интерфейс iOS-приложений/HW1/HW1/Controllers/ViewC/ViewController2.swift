@@ -74,6 +74,12 @@ extension ViewController2: WKNavigationDelegate {
 //        loadPhotosList()
         loadGroups()
 //        loadSearchGroupByQ()
+        
+        if (!token!.isEmpty) {
+            let storyBoard = UIStoryboard(name: "Main", bundle:nil)
+            let vc = storyBoard.instantiateViewController(withIdentifier: "mainScreen")
+            self.show(vc, sender: nil)
+        }
     }
 }
 
@@ -130,8 +136,8 @@ extension ViewController2 {
             guard let items = response.value else { return }
                 
             do {
-                let groups = try JSONDecoder().decode(GroupResponse.self, from: items)
-                print(groups.items)
+                let groups = try JSONDecoder().decode(Group.self, from: items)
+                print(groups.response.items)
             } catch {
                 print(error)
             }

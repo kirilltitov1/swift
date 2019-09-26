@@ -9,6 +9,9 @@
 import Foundation
 
 
-struct User {
-//    данные юзера
+class User {
+    let response = UserResponse
 }
+
+
+class 

@@ -10,12 +10,17 @@ import Foundation
 
 
 class Group: Codable {
-    let response: GroupResponse
+    var response: GroupResponse
 }
 
 
 class GroupResponse: NSObject, Codable {
-    let count = 0
-    let items: [Int] = []
+    var count = 0
+    var items: [Int] = []
+    
+    enum Main: String, CodingKey {
+        case count = "count"
+        case items = "items"
+    }
 }
 

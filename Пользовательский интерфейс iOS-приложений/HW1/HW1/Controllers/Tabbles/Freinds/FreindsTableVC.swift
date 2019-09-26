@@ -13,6 +13,8 @@ protocol FreindsTableVCDelegate {
 }
 
 class FreindsTableVC: UITableViewController {
+    
+    
 
     var delegate: FreindsTableVCDelegate?
     
