@@ -9,9 +9,25 @@
 import Foundation
 
 
-class User {
-    let response = UserResponse
+class User: Codable {
+    let freinds: UserFreinds
+
 }
 
 
-class 
+class UserFreinds: Codable {
+    var response: FreindsResponse
+}
+
+
+class FreindsResponse: Codable {
+    var items: [FreindsItems]
+}
+
+
+class FreindsItems: Codable {
+    var first_name: String
+    var last_name: String
+    var photo_max_orig: String
+    var online: Int
+}

@@ -70,9 +70,9 @@ extension ViewController2: WKNavigationDelegate {
         
         print(session.token)
         decisionHandler(.cancel)
-//        loadNameFriendsList()
+        loadNameFriendsList()
 //        loadPhotosList()
-        loadGroups()
+//        loadGroups()
 //        loadSearchGroupByQ()
         
         if (!token!.isEmpty) {
@@ -89,15 +89,24 @@ extension ViewController2 {
     func loadNameFriendsList() {
         let METHOD_NAME = "/friends.get"
 
-        let PARAMETERS: Parameters = ["fields": "nickname",
+        let PARAMETERS: Parameters = ["fields": "nickname,photo_max_orig",
                                       "access_token": session.token,
                                       "v": session.apiVersion
         ]
         
         let url = session.vkURL + session.vkMethod + METHOD_NAME
         
-        Alamofire.request(url, method: .get, parameters: PARAMETERS).responseJSON {response in
-            print(response.value ?? "")
+        Alamofire.request(url, method: .get, parameters: PARAMETERS).responseData {response in
+            
+            guard let response2 = response.value else { return }
+            
+            do {
+                let freinds = try JSONDecoder().decode(UserFreinds.self, from: response2)
+                print(freinds.response.items[0].photo_max_orig)
+//                var user = Use
+            } catch {
+                print(error)
+            }
         }
     }
     
