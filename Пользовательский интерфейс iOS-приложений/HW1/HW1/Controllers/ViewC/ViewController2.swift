@@ -10,9 +10,9 @@ import UIKit
 import WebKit
 import Alamofire
 
+var session = Session.instance
+
 class ViewController2: UIViewController {
-    
-    var session = Session.instance
 
     @IBOutlet weak var webView: WKWebView! {
         didSet {
@@ -70,7 +70,7 @@ extension ViewController2: WKNavigationDelegate {
         
         print(session.token)
         decisionHandler(.cancel)
-        loadNameFriendsList()
+//        loadNameFriendsList()
 //        loadPhotosList()
 //        loadGroups()
 //        loadSearchGroupByQ()
@@ -86,31 +86,6 @@ extension ViewController2: WKNavigationDelegate {
 
 extension ViewController2 {
 
-    func loadNameFriendsList() {
-        let METHOD_NAME = "/friends.get"
-
-        let PARAMETERS: Parameters = ["fields": "nickname,photo_max_orig",
-                                      "access_token": session.token,
-                                      "v": session.apiVersion
-        ]
-        
-        let url = session.vkURL + session.vkMethod + METHOD_NAME
-        
-        Alamofire.request(url, method: .get, parameters: PARAMETERS).responseData {response in
-            
-            guard let response2 = response.value else { return }
-            
-            do {
-                let freinds = User.instance
-                
-                let freindsItems = try JSONDecoder().decode(UserFreindsModel.self, from: response2)
-                freinds.freinds = freindsItems.response.items
-                print(freinds.freinds![0].photo_max_orig)
-            } catch {
-                print(error)
-            }
-        }
-    }
     
     
     func loadPhotosList() {

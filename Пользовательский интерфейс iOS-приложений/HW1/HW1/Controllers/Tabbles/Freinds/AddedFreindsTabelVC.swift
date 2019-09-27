@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 protocol AddedFreindsTableVCDelegate {
     var freindsCount: Int { get set }
@@ -26,6 +27,10 @@ class AddedFreindsTabelVC: UITableViewController {
         return arrhaystack.contains(needle);
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        loadNameFriendsList()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -36,12 +41,12 @@ class AddedFreindsTabelVC: UITableViewController {
         }
     }
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return addedFreinds.count
-    }
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        return addedFreinds.count
+//    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return addedFreinds[section].count-1
+        return 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -61,9 +66,7 @@ class AddedFreindsTabelVC: UITableViewController {
                        initialSpringVelocity: 0.5,
                        options: [],
                        animations: {
-//                        let cell = tableView.dequeueReusableCell(withIdentifier: "freindCell") as! AddedCell?
                         
-//                        cell.freindImage.frame.size.height = cell.freindImage.frame.size.height/1.3
         })
     }
 }
@@ -101,4 +104,34 @@ extension AddedFreindsTabelVC: FreindsTableVCDelegate {
             return addedFreinds[section][0]
         }
     }
+}
+
+
+extension AddedFreindsTabelVC {
+    
+    func loadNameFriendsList() {
+           let METHOD_NAME = "/friends.get"
+
+           let PARAMETERS: Parameters = ["fields": "nickname,photo_max_orig",
+                                         "access_token": session.token,
+                                         "v": session.apiVersion
+           ]
+           
+           let url = session.vkURL + session.vkMethod + METHOD_NAME
+           
+           Alamofire.request(url, method: .get, parameters: PARAMETERS).responseData {response in
+               
+               guard let response2 = response.value else { return }
+               
+               do {
+                   let freinds = User.instance
+                   
+                   let freindsItems = try JSONDecoder().decode(UserFreindsModel.self, from: response2)
+                   freinds.freinds = freindsItems.response.items
+                   print(freinds.freinds![0].photo_max_orig)
+               } catch {
+                   print(error)
+               }
+           }
+       }
 }
