@@ -10,12 +10,15 @@ import Foundation
 
 
 class User: Codable {
-    let freinds: UserFreinds
-
+    static var instance = User()
+    
+    var freinds: [FreindsItems]?
+    
+    private init(){}
 }
 
 
-class UserFreinds: Codable {
+class UserFreindsModel: Codable {
     var response: FreindsResponse
 }
 

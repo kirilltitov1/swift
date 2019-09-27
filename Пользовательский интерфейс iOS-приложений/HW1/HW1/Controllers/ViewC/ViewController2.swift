@@ -101,9 +101,11 @@ extension ViewController2 {
             guard let response2 = response.value else { return }
             
             do {
-                let freinds = try JSONDecoder().decode(UserFreinds.self, from: response2)
-                print(freinds.response.items[0].photo_max_orig)
-//                var user = Use
+                let freinds = User.instance
+                
+                let freindsItems = try JSONDecoder().decode(UserFreindsModel.self, from: response2)
+                freinds.freinds = freindsItems.response.items
+                print(freinds.freinds![0].photo_max_orig)
             } catch {
                 print(error)
             }
