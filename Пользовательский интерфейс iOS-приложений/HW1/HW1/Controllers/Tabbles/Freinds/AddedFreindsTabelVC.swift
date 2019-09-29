@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import CoreData
 
 protocol AddedFreindsTableVCDelegate {
     var freindsCount: Int { get set }
@@ -124,11 +125,49 @@ extension AddedFreindsTabelVC {
                guard let response2 = response.value else { return }
                
                do {
-                   let freinds = User.instance
-                   
-                   let freindsItems = try JSONDecoder().decode(UserFreindsModel.self, from: response2)
-                   freinds.freinds = freindsItems.response.items
-                   print(freinds.freinds![0].photo_max_orig)
+                let friends = User.instance
+
+                let freindsItems = try JSONDecoder().decode(UserFriendsModel.self, from: response2)
+                friends.friends = freindsItems.response.items
+                
+                
+//                if let friend = NSEntityDescription.insertNewObject(forEntityName: "FriendData", into: NSManagedObject(context: FriendData)) as? FriendData {
+//                    return
+//                }
+
+                
+                func createData() {
+                    
+                    guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+
+//                  вот здесь в контексте он выкидывает ошибку "Failed to load model named HW1"
+                    let context = appDelegate.persistentContainer.viewContext
+                    
+//                  здесь происходит краш An NSManagedObject of class 'HW1.UserData' must have a valid NSEntityDescription.'
+                    let user = UserData(context: context)
+                    
+                    for i in friends.friends! {
+
+                        let friend = FriendData(context: context)
+                        
+                        friend.name = "\(i.first_name)"
+                        friend.surname = "\(i.last_name)"
+//                      тут он поч то ругается на преобразование Data
+//                        friend.photo = try! Data.init(contentsOf: URL(string: i.photo_max_orig)!) as NSDate
+                        friend.online = Int16(i.online)
+                        
+                        user.addToFriends(friend)
+                        
+                        do {
+                            try context.save()
+                        } catch {
+                            print(error)
+                        }
+                    }
+                }
+                createData()
+
+                print(friends.friends![0].photo_max_orig)
                } catch {
                    print(error)
                }
