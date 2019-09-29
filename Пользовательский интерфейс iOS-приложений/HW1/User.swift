@@ -33,6 +33,7 @@ class FriendsItems: Codable {
     var last_name: String
     var photo_max_orig: String
     var online: Int
+    var id: Int
 }
 
 

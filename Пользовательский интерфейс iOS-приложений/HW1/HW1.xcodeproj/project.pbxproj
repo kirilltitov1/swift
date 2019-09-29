@@ -44,6 +44,8 @@
 		EFBFFC1D230439370068FBB5 /* ForMoreClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBFFC1C230439370068FBB5 /* ForMoreClasses.swift */; };
 		EFD584762312D8DE002C15F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFD584752312D8DE002C15F0 /* Assets.xcassets */; };
 		EFDCD08B233CD46000EFEAE4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDCD08A233CD46000EFEAE4 /* TabBarController.swift */; };
+		EFE284C323414CD1002736EE /* FriendRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE284C223414CD1002736EE /* FriendRealm.swift */; };
+		EFE284C523414E9D002736EE /* UserRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE284C423414E9D002736EE /* UserRealm.swift */; };
 		EFE5D911230863920094AF70 /* FreindsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE5D910230863920094AF70 /* FreindsTableVC.swift */; };
 		EFF8936E22FCECC700458BAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF8936D22FCECC700458BAD /* AppDelegate.swift */; };
 		EFF8937022FCECC700458BAD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF8936F22FCECC700458BAD /* ViewController.swift */; };
@@ -90,6 +92,8 @@
 		EFBFFC1C230439370068FBB5 /* ForMoreClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForMoreClasses.swift; sourceTree = "<group>"; };
 		EFD584752312D8DE002C15F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EFDCD08A233CD46000EFEAE4 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TabBarController.swift; path = HW1/Controllers/TabBarController.swift; sourceTree = SOURCE_ROOT; };
+		EFE284C223414CD1002736EE /* FriendRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRealm.swift; sourceTree = "<group>"; };
+		EFE284C423414E9D002736EE /* UserRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRealm.swift; sourceTree = "<group>"; };
 		EFE5D910230863920094AF70 /* FreindsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreindsTableVC.swift; sourceTree = "<group>"; };
 		EFF8936A22FCECC700458BAD /* HW1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HW1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFF8936D22FCECC700458BAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -325,6 +329,8 @@
 		EFF8936C22FCECC700458BAD /* HW1 */ = {
 			isa = PBXGroup;
 			children = (
+				EFE284C223414CD1002736EE /* FriendRealm.swift */,
+				EFE284C423414E9D002736EE /* UserRealm.swift */,
 				EFF8936D22FCECC700458BAD /* AppDelegate.swift */,
 				EFA69FAD2340095C00BF1313 /* User->Freinds->ItemData */,
 				EF1035CE233FD9A700363846 /* DataModels */,
@@ -476,6 +482,7 @@
 				EF87568F23074F7500187B23 /* SettingsCollectionVC.swift in Sources */,
 				EF834CC92305877000FBC3AA /* CollectionViewControllerFromMoreVC.swift in Sources */,
 				EFA6A0162340CA4D00BF1313 /* UserData+CoreDataProperties.swift in Sources */,
+				EFE284C323414CD1002736EE /* FriendRealm.swift in Sources */,
 				EF5FF3A82319922500549DA7 /* TopNewsCell.swift in Sources */,
 				EF4787EA2312E59100307E3F /* FreindCell.swift in Sources */,
 				EFA2C4EC2314ACBF009CC6D7 /* Functions.swift in Sources */,
@@ -486,6 +493,7 @@
 				EF2C23C7232E55EA00A51922 /* Session.swift in Sources */,
 				EFDCD08B233CD46000EFEAE4 /* TabBarController.swift in Sources */,
 				EF0D3C6C2337D965006F7F78 /* ViewController2.swift in Sources */,
+				EFE284C523414E9D002736EE /* UserRealm.swift in Sources */,
 				EF834CC52304BFC100FBC3AA /* Model.swift in Sources */,
 				EFA6A0152340CA4D00BF1313 /* UserData+CoreDataClass.swift in Sources */,
 				EF143792232F774B00B7F80F /* NewsVC+UITableViewDataSource.swift in Sources */,

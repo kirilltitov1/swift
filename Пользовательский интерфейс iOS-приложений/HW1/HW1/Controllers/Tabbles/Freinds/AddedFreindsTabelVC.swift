@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import CoreData
+import RealmSwift
 
 protocol AddedFreindsTableVCDelegate {
     var freindsCount: Int { get set }
@@ -17,6 +18,8 @@ protocol AddedFreindsTableVCDelegate {
 class AddedFreindsTabelVC: UITableViewController {
     @IBOutlet weak var height: NSLayoutConstraint!
     
+//    var userHolder = []
+    var realm: Realm?
     
     var delegate: AddedFreindsTableVCDelegate?
 
@@ -34,6 +37,8 @@ class AddedFreindsTabelVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(Realm.Configuration.defaultConfiguration.fileURL)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -165,7 +170,35 @@ extension AddedFreindsTabelVC {
                         }
                     }
                 }
-                createData()
+//                createData()
+                
+                
+                func createRealmData() {
+//                    создаю сущность юзер для заполнения
+                    let User = UserRealm()
+                    
+//                    создаю сущность Realm для дольнейшей записи(не смог обраить в docatch)
+                    let realm = try! Realm()
+                    
+                    for friend in friends.friends! {
+//                        циклически создаю новую сущность друга для парсинга(можно ли не создавать новую? проверить!)
+                        let FriendPars = FriendRealm()
+//                        переопределяю значения сущности для записи в бд
+                        FriendPars.id = friend.id
+                        FriendPars.last_name = friend.last_name
+                        FriendPars.name = friend.first_name
+                        FriendPars.online = Int8(friend.online)
+                        FriendPars.photo = nil
+                        User.friend = FriendPars
+                        
+                        try! realm.write() {
+                            User.friend = FriendPars
+                            self.realm?.add(User)
+                        }
+                    }
+                    
+                }
+                createRealmData()
 
                 print(friends.friends![0].photo_max_orig)
                } catch {
