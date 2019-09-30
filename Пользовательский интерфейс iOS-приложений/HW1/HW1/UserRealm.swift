@@ -11,6 +11,4 @@ import RealmSwift
 
 class UserRealm: Object {
     @objc dynamic var friend: FriendRealm?
-    
-//    let userRealm = List<FriendRealm>()
 }
