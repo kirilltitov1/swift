@@ -176,13 +176,14 @@ extension AddedFreindsTabelVC {
                 func createRealmData() {
 //                    создаю сущность юзер для заполнения
                     let User = UserRealm()
+                    let FriendPars = FriendRealm()
                     
+                    FriendPars.ownerFriend = User
 //                    создаю сущность Realm для дольнейшей записи(не смог обраить в docatch)
                     let realm = try! Realm()
                     
                     for friend in friends.friends! {
 //                        циклически создаю новую сущность друга для парсинга(можно ли не создавать новую? проверить!)
-                        let FriendPars = FriendRealm()
 //                        переопределяю значения сущности для записи в бд
                         FriendPars.id = friend.id
                         FriendPars.last_name = friend.last_name
@@ -192,6 +193,8 @@ extension AddedFreindsTabelVC {
                         User.friend = FriendPars
                         
                         try! realm.write() {
+                            
+                            
                             User.friend = FriendPars
                             self.realm?.add(User)
                         }

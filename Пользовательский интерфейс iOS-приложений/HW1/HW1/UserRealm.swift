@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 class UserRealm: Object {
-    dynamic var friend: FriendRealm?
+    @objc dynamic var friend: FriendRealm?
     
-    let userRealm = List<FriendRealm>()
+//    let userRealm = List<FriendRealm>()
 }
