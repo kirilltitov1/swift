@@ -20,6 +20,7 @@ class AddedFreindsTabelVC: UITableViewController {
     
 //    var userHolder = []
     var realm: Realm?
+//    let realm = try! Realm()
     
     var delegate: AddedFreindsTableVCDelegate?
 
@@ -176,7 +177,6 @@ extension AddedFreindsTabelVC {
                 func createRealmData() {
 //                    создаю сущность юзер для заполнения
                     let User = UserRealm()
-                    let FriendPars = FriendRealm()
                     
 //                    FriendPars.ownerFriend = User
 //                    создаю сущность Realm для дольнейшей записи(не смог обраить в docatch)
@@ -184,16 +184,17 @@ extension AddedFreindsTabelVC {
                     
                     for friend in friends.friends! {
 //                        переопределяю значения сущности для записи в бд
+                        let FriendPars = FriendRealm()
                         FriendPars.id = friend.id
                         FriendPars.last_name = friend.last_name
                         FriendPars.name = friend.first_name
                         FriendPars.online = Int8(friend.online)
                         FriendPars.photo = nil
 
+                        User.friend.append(FriendPars)
                         
                         try! realm.write() {
-                            User.friend = FriendPars
-                            self.realm?.add(User)
+                            realm.add(User)
                         }
                     }
                 }
@@ -202,7 +203,7 @@ extension AddedFreindsTabelVC {
                 func delete() {
                     let realm = try! Realm()
                     
-                    try! realm.write {
+                    try! realm.write() {
                         realm.deleteAll()
                     }
                 }

@@ -10,5 +10,5 @@ import Foundation
 import RealmSwift
 
 class UserRealm: Object {
-    @objc dynamic var friend: FriendRealm?
+    dynamic var friend = List<FriendRealm>()
 }
