@@ -24,7 +24,7 @@ class UserFriendsModel: Codable {
 
 
 class FriendsResponse: Codable {
-    var items: [FriendsItems]
+    var items: [FriendsItems]?
 }
 
 

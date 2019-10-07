@@ -10,38 +10,38 @@ import Foundation
 import RealmSwift
 
 
-class Photo: Object, Codable {
+class Photo: Codable {
     var response: PhotoResponse
 }
 
 
-class PhotoResponse: Object, Codable {
+class PhotoResponse: Codable {
     var items: [PhotoItems]
 }
 
 
-class PhotoItems: Object, Codable {
+class PhotoItems: Codable {
     var text = ""
     var date = 0
     var sizes: [PhotoSizes] = []
-    var sizesRealm: List<PhotoSizes>? = List<PhotoSizes>()
+    var sizesRealm: [PhotoSizes] = [PhotoSizes()]
     
-    convenience required init(from decoder: Decoder) throws {
-        self.init()
-        
-        let values = try decoder.container(keyedBy: CodingKeys.self)
-        for size in sizes {
-            sizesRealm?.append(size)
-        }
-    }
+//    convenience required init(from decoder: Decoder) throws {
+//        self.init()
+//
+//        let values = try decoder.container(keyedBy: CodingKeys.self)
+//        for size in sizes {
+//            sizesRealm?.append(size)
+//        }
+//    }
     
-    override class func ignoredProperties() -> [String] {
-        return ["sizes"]
-    }
+//    override class func ignoredProperties() -> [String] {
+//        return ["sizes"]
+//    }
 }
 
 
-class PhotoSizes: Object, Codable {
+class PhotoSizes: Codable {
     var type = ""
     var url = ""
     var width = 0
