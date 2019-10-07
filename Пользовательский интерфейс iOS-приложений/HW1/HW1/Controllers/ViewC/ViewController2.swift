@@ -41,8 +41,7 @@ class ViewController2: UIViewController {
 
 
 extension ViewController2: WKNavigationDelegate {
-    
-    
+
     func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
         guard let url = navigationResponse.response.url,
             url.path == "/blank.html",
@@ -85,8 +84,6 @@ extension ViewController2: WKNavigationDelegate {
 
 
 extension ViewController2 {
-
-    
     
     func loadPhotosList() {
         let METHOD_NAME = "/photos.get"

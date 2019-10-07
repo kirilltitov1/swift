@@ -20,6 +20,7 @@ class AddedFreindsTabelVC: UITableViewController {
     
 //    var userHolder = []
     var realm: Realm?
+    
 //    let realm = try! Realm()
     
     var delegate: AddedFreindsTableVCDelegate?
@@ -39,7 +40,7 @@ class AddedFreindsTabelVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(Realm.Configuration.defaultConfiguration.fileURL)
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -180,23 +181,40 @@ extension AddedFreindsTabelVC {
                     
 //                    FriendPars.ownerFriend = User
 //                    создаю сущность Realm для дольнейшей записи(не смог обраить в docatch)
-                    let realm = try! Realm()
+//                    let config = Realm.Configuration(deleteRealmIfMigrationNeeded: true)
                     
-                    for friend in friends.friends! {
-//                        переопределяю значения сущности для записи в бд
-                        let FriendPars = FriendRealm()
-                        FriendPars.id = friend.id
-                        FriendPars.last_name = friend.last_name
-                        FriendPars.name = friend.first_name
-                        FriendPars.online = Int8(friend.online)
-                        FriendPars.photo = nil
-
-                        User.friend.append(FriendPars)
-                        
-                        try! realm.write() {
-                            realm.add(User)
-                        }
+                    do {
+                        let realm = try Realm()
+                    } catch {
+                        print("\(error)")
                     }
+                    
+                    
+//                    for friend in friends.friends! {
+////                        переопределяю значения сущности для записи в бд
+//                        let FriendPars = FriendRealm()
+//                        FriendPars.id = friend.id
+//                        FriendPars.last_name = friend.last_name
+//                        FriendPars.name = friend.first_name
+//                        FriendPars.online = Int8(friend.online)
+//                        FriendPars.photo = nil
+//
+//                        User.friend.append(FriendPars)
+//
+//                        realm.beginWrite()
+//                        realm.add(User)
+//
+//                        do {
+//                            try realm.commitWrite()
+//                        } catch {
+//                            print("\(error)")
+//                        }
+//
+//
+////                        try! realm.write() {
+////                            realm.add(User)
+////                        }
+//                    }
                 }
                 
                 
