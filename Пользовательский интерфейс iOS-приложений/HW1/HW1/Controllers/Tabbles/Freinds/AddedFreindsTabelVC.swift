@@ -20,6 +20,7 @@ class AddedFreindsTabelVC: UITableViewController {
     
 //    var userHolder = []
     var realm: Realm?
+    var addedRealmFriends: Results<FriendRealm>?
     
 //    let realm = try! Realm()
     
@@ -54,15 +55,18 @@ class AddedFreindsTabelVC: UITableViewController {
 //    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return addedRealmFriends?.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AddedFreindCell", for: indexPath) as! AddedCell
 
-        if addedFreinds[indexPath.section].count > 1 {
-            cell.setFreind(addedFreinds[indexPath.section][indexPath.row+1], UIImage(named: addedFreinds[indexPath.section][indexPath.row+1])!)
-        }
+        
+        cell.setFreind((addedRealmFriends?[indexPath.row].name)!, (addedRealmFriends?[indexPath.row].photo)!)
+        
+//        if addedFreinds[indexPath.section].count > 1 {
+//            cell.setFreind(addedFreinds[indexPath.section][indexPath.row+1], UIImage(named: addedFreinds[indexPath.section][indexPath.row+1])!)
+//        }
 
         return cell
     }
@@ -74,7 +78,7 @@ class AddedFreindsTabelVC: UITableViewController {
                        initialSpringVelocity: 0.5,
                        options: [],
                        animations: {
-                        
+
         })
     }
 }
@@ -178,31 +182,27 @@ extension AddedFreindsTabelVC {
                 func createRealmData() {
 //                    создаю сущность юзер для заполнения
                     let User = UserRealm()
-                    let FriendPars = FriendRealm()
                     
 //                    FriendPars.ownerFriend = User
 //                    создаю сущность Realm для дольнейшей записи(не смог обраить в docatch)
                     let config = Realm.Configuration(deleteRealmIfMigrationNeeded: true)
                     
                     let realm = try! Realm(configuration: config)
+                    realm.beginWrite()
                     
                     
                     for friend in friends.friends! {
 //                        переопределяю значения сущности для записи в бд
+                        let FriendPars = FriendRealm()
                         FriendPars.id = friend.id
                         FriendPars.last_name = friend.last_name
                         FriendPars.name = friend.first_name
                         FriendPars.online = Int8(friend.online)
-                        FriendPars.photo = nil
+                        FriendPars.photo = try! Data.init(contentsOf: URL(string: friend.photo_max_orig)!)
 
                         User.friend.append(FriendPars)
 
-                        realm.beginWrite()
                         realm.add(User)
-
-//                        try! realm.write() {
-//                            realm.add(User)
-//                        }
                     }
                     
                     do {
@@ -210,6 +210,8 @@ extension AddedFreindsTabelVC {
                     } catch {
                         print("\(error)")
                     }
+                    self.addedRealmFriends = realm.objects(FriendRealm.self)
+                    self.tableView.reloadData()
                 }
                 
                 
@@ -221,8 +223,8 @@ extension AddedFreindsTabelVC {
                     }
                 }
                 
+                delete()
                 createRealmData()
-//                delete()
                 
 
                 print(friends.friends![0].photo_max_orig)

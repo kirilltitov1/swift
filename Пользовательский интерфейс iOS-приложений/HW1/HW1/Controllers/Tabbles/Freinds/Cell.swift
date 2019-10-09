@@ -29,9 +29,9 @@ class Cell: UITableViewCell {
         freindImage.layer.cornerRadius = 25
     }
     
-    func setFreind(_ Name: String, _ Image: UIImage) {
+    func setFreind(_ Name: String, _ Data: Data) {
         label?.text = Name
-        freindImage?.image = Image
+        freindImage?.image = UIImage(data: Data)
     }
     
     func chageSizeFrame(_ ratio: CGFloat) {
