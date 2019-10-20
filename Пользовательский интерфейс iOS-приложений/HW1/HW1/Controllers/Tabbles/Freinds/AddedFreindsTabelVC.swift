@@ -18,13 +18,20 @@ protocol AddedFreindsTableVCDelegate {
 class AddedFreindsTabelVC: UITableViewController {
     @IBOutlet weak var height: NSLayoutConstraint!
     
-//    var userHolder = []
+    @IBAction func onlineFilter() {
+        self.addedRealmFriends = try! Realm().objects(FriendRealm.self).filter("online = 1")
+        self.tableView.reloadData()
+    }
+    
+    var token: NotificationToken?
+    
     var realm: Realm?
     var addedRealmFriends: Results<FriendRealm>?
     
-//    let realm = try! Realm()
     
     var delegate: AddedFreindsTableVCDelegate?
+    
+    
 
     var addedFreinds: [[String]] = [["A"], ["B"], ["C"], ["D"], ["E"], ["F"], ["G"], ["H"], ["I"], ["J"], ["K"], ["L"], ["M"], ["N"], ["O"], ["P"], ["Q"], ["R"], ["S"], ["T"], ["U"], ["V"], ["V"], ["X"], ["Y"], ["Z"]]
     
@@ -71,16 +78,16 @@ class AddedFreindsTabelVC: UITableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        UIView.animate(withDuration: 0.5,
-                       delay: 0,
-                       usingSpringWithDamping: 0.5,
-                       initialSpringVelocity: 0.5,
-                       options: [],
-                       animations: {
-
-        })
-    }
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        UIView.animate(withDuration: 0.5,
+//                       delay: 0,
+//                       usingSpringWithDamping: 0.5,
+//                       initialSpringVelocity: 0.5,
+//                       options: [],
+//                       animations: {
+//
+//        })
+//    }
 }
 
 
@@ -105,17 +112,17 @@ extension AddedFreindsTabelVC: FreindsTableVCDelegate {
     }
     
     
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
-        //        че то я не понял как сделать полупрозрачность
-//                tableView.layer.backgroundColor?.alpha = 0.5
-        
-        if addedFreinds[section].count == 1 {
-            return nil
-        } else {
-            return addedFreinds[section][0]
-        }
-    }
+//    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//
+//        //        че то я не понял как сделать полупрозрачность
+////                tableView.layer.backgroundColor?.alpha = 0.5
+//
+//        if addedFreinds[section].count == 1 {
+//            return nil
+//        } else {
+//            return addedFreinds[section][0]
+//        }
+//    }
 }
 
 
@@ -180,11 +187,9 @@ extension AddedFreindsTabelVC {
                 
                 
                 func createRealmData() {
-//                    создаю сущность юзер для заполнения
+                    
                     let User = UserRealm()
                     
-//                    FriendPars.ownerFriend = User
-//                    создаю сущность Realm для дольнейшей записи(не смог обраить в docatch)
                     let config = Realm.Configuration(deleteRealmIfMigrationNeeded: true)
                     
                     let realm = try! Realm(configuration: config)
@@ -192,13 +197,16 @@ extension AddedFreindsTabelVC {
                     
                     
                     for friend in friends.friends! {
-//                        переопределяю значения сущности для записи в бд
+
                         let FriendPars = FriendRealm()
                         FriendPars.id = friend.id
                         FriendPars.last_name = friend.last_name
                         FriendPars.name = friend.first_name
                         FriendPars.online = Int8(friend.online)
-                        FriendPars.photo = try! Data.init(contentsOf: URL(string: friend.photo_max_orig)!)
+//                        DispatchQueue.global().async {
+                            FriendPars.photo = try! Data.init(contentsOf: URL(string: friend.photo_max_orig)!)
+                        
+//                    }
 
                         User.friend.append(FriendPars)
 
@@ -223,9 +231,16 @@ extension AddedFreindsTabelVC {
                     }
                 }
                 
+                
+//                func onlineFilter() {
+//                    self.addedRealmFriends = try! Realm().objects(FriendRealm.self).filter("online = 1")
+//                    self.tableView.reloadData()
+//                }
+                
+                
+//                onlineFilter()
                 delete()
                 createRealmData()
-                
 
                 print(friends.friends![0].photo_max_orig)
                } catch {
@@ -233,4 +248,27 @@ extension AddedFreindsTabelVC {
                }
            }
        }
+}
+
+
+extension Realm {
+    func writeAsync<T : ThreadConfined>(obj: T, errorHandler: @escaping ((_ error : Swift.Error) -> Void) = { _ in return }, block: @escaping ((Realm, T?) -> Void)) {
+        let wrappedObj = ThreadSafeReference(to: obj)
+        let config = self.configuration
+        DispatchQueue(label: "background").async {
+            autoreleasepool {
+                do {
+                    let realm = try Realm(configuration: config)
+                    let obj = realm.resolve(wrappedObj)
+
+                    try realm.write {
+                        block(realm, obj)
+                    }
+                }
+                catch {
+                    errorHandler(error)
+                }
+            }
+        }
+    }
 }

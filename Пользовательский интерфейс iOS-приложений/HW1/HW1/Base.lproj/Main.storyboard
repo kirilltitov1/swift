@@ -394,11 +394,18 @@
                                 <segue destination="J6X-4f-z4Z" kind="show" id="3Go-6P-YNz"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="yLB-Kz-ZlC">
-                            <connections>
-                                <segue destination="1Cp-tU-qwe" kind="show" id="7vE-d8-5Bw"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="yLB-Kz-ZlC">
+                                <connections>
+                                    <segue destination="1Cp-tU-qwe" kind="show" id="7vE-d8-5Bw"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="refresh" id="fPv-i7-SXV">
+                                <connections>
+                                    <action selector="onlineFilter" destination="qE7-5B-jzD" id="Wx1-QN-0vs"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ua7-ey-Mmv" userLabel="First Responder" sceneMemberID="firstResponder"/>
