@@ -14,6 +14,7 @@
 		EF143792232F774B00B7F80F /* NewsVC+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF143791232F774B00B7F80F /* NewsVC+UITableViewDataSource.swift */; };
 		EF143796232F7C0800B7F80F /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF143794232F7C0800B7F80F /* TableViewCell.swift */; };
 		EF143797232F7C0800B7F80F /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF143795232F7C0800B7F80F /* TableViewCell.xib */; };
+		EF26BCE12364B23C00D7F9E4 /* DownloadData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF26BCE02364B23C00D7F9E4 /* DownloadData.swift */; };
 		EF2C23C7232E55EA00A51922 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2C23C6232E55EA00A51922 /* Session.swift */; };
 		EF44F1B62308AF7400EE00CC /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF44F1B52308AF7400EE00CC /* Cell.swift */; };
 		EF4787EA2312E59100307E3F /* FreindCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4787E82312E59100307E3F /* FreindCell.swift */; };
@@ -62,6 +63,7 @@
 		EF143791232F774B00B7F80F /* NewsVC+UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewsVC+UITableViewDataSource.swift"; sourceTree = "<group>"; };
 		EF143794232F7C0800B7F80F /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		EF143795232F7C0800B7F80F /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		EF26BCE02364B23C00D7F9E4 /* DownloadData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadData.swift; sourceTree = "<group>"; };
 		EF2C23C6232E55EA00A51922 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = SOURCE_ROOT; };
 		EF44F1B52308AF7400EE00CC /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		EF4787E82312E59100307E3F /* FreindCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreindCell.swift; sourceTree = "<group>"; };
@@ -298,6 +300,7 @@
 				EF44F1B52308AF7400EE00CC /* Cell.swift */,
 				EF7E12D72309C3EC0038F549 /* AddedFreindsTabelVC.swift */,
 				EF7E12D92309C4050038F549 /* AddedCell.swift */,
+				EF26BCE02364B23C00D7F9E4 /* DownloadData.swift */,
 			);
 			path = Freinds;
 			sourceTree = "<group>";
@@ -484,6 +487,7 @@
 				EFA6A0162340CA4D00BF1313 /* UserData+CoreDataProperties.swift in Sources */,
 				EFE284C323414CD1002736EE /* FriendRealm.swift in Sources */,
 				EF5FF3A82319922500549DA7 /* TopNewsCell.swift in Sources */,
+				EF26BCE12364B23C00D7F9E4 /* DownloadData.swift in Sources */,
 				EF4787EA2312E59100307E3F /* FreindCell.swift in Sources */,
 				EFA2C4EC2314ACBF009CC6D7 /* Functions.swift in Sources */,
 				EFBFFC1D230439370068FBB5 /* ForMoreClasses.swift in Sources */,

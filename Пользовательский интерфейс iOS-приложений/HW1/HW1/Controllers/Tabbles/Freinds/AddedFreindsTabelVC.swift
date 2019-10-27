@@ -19,6 +19,7 @@ class AddedFreindsTabelVC: UITableViewController {
     @IBOutlet weak var height: NSLayoutConstraint!
     
     @IBAction func onlineFilter() {
+        
         self.addedRealmFriends = try! Realm().objects(FriendRealm.self).filter("online = 1")
         self.tableView.reloadData()
     }
@@ -31,13 +32,12 @@ class AddedFreindsTabelVC: UITableViewController {
     
     var delegate: AddedFreindsTableVCDelegate?
     
-    
 
     var addedFreinds: [[String]] = [["A"], ["B"], ["C"], ["D"], ["E"], ["F"], ["G"], ["H"], ["I"], ["J"], ["K"], ["L"], ["M"], ["N"], ["O"], ["P"], ["Q"], ["R"], ["S"], ["T"], ["U"], ["V"], ["V"], ["X"], ["Y"], ["Z"]]
     
     var freindsCount = 0
     
-    func arrayContains(needle: String, arrhaystack: [String]) -> Bool{
+    func arrayContains(needle: String, arrhaystack: [String]) -> Bool {
         return arrhaystack.contains(needle);
     }
     
@@ -239,8 +239,13 @@ extension AddedFreindsTabelVC {
                 
                 
 //                onlineFilter()
+//                createRealmData()
+                
                 delete()
-                createRealmData()
+                DownloadData().start()
+                
+                self.tableView.reloadData()
+                
 
                 print(friends.friends![0].photo_max_orig)
                } catch {
