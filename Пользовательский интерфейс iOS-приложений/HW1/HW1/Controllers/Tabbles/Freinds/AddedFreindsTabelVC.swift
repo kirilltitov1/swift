@@ -219,7 +219,6 @@ extension AddedFreindsTabelVC {
                         print("\(error)")
                     }
                     self.addedRealmFriends = realm.objects(FriendRealm.self)
-                    self.tableView.reloadData()
                 }
                 
                 
@@ -241,10 +240,14 @@ extension AddedFreindsTabelVC {
 //                onlineFilter()
 //                createRealmData()
                 
-                delete()
-                DownloadData().start()
                 
-                self.tableView.reloadData()
+                delete()
+//                let thread1 = DownloadData(tableView: self.tableView)
+                
+                DispatchQueue.main.async {
+                    createRealmData()
+                    self.tableView.reloadData()
+                }
                 
 
                 print(friends.friends![0].photo_max_orig)
