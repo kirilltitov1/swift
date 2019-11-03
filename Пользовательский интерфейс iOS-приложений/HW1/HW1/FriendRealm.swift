@@ -13,6 +13,6 @@ class FriendRealm: Object {
     @objc dynamic var name: String = ""
     @objc dynamic var last_name: String = ""
     @objc dynamic var id: Int = 0
-    @objc dynamic var photo: Data?
+    @objc dynamic var photo: String = ""
     @objc dynamic var online: Int8 = 0
 }

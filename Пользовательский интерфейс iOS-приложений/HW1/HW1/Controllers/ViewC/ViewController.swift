@@ -110,6 +110,12 @@ class ViewController: UIViewController {
             }
         }
     }
+}
+
+
+
+// MARK: - Keyboard modifications
+extension ViewController {
     
     @objc func keyboardWasShown(notification: Notification) {
         let info = notification.userInfo! as NSDictionary
@@ -125,7 +131,4 @@ class ViewController: UIViewController {
         self.scrollViewBackend.contentInset = insets
         self.scrollViewBackend.scrollIndicatorInsets = insets
     }
-    
-    
 }
-

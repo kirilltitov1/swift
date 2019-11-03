@@ -64,7 +64,7 @@ class DownloadData: Thread {
                 FriendPars.name = friend.first_name
                 FriendPars.online = Int8(friend.online)
                 
-                FriendPars.photo = try! Data.init(contentsOf: URL(string: friend.photo_max_orig)!)
+//                FriendPars.photo = try! Data.init(contentsOf: URL(string: friend.photo_max_orig)!)
 
                 User.friend.append(FriendPars)
 

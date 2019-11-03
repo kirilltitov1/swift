@@ -188,14 +188,13 @@ extension AddedFreindsTabelVC {
                 
                 func createRealmData() {
                     
-                    let User = UserRealm()
-                    
                     let config = Realm.Configuration(deleteRealmIfMigrationNeeded: true)
                     
                     let realm = try! Realm(configuration: config)
-                    realm.beginWrite()
                     
+                    let writeUser = realm.objects(UserRealm.self)
                     
+                    realm.writeAsync(obj: writeUser) { (realm, writeUser) in
                     for friend in friends.friends! {
 
                         let FriendPars = FriendRealm()
@@ -203,52 +202,51 @@ extension AddedFreindsTabelVC {
                         FriendPars.last_name = friend.last_name
                         FriendPars.name = friend.first_name
                         FriendPars.online = Int8(friend.online)
-//                        DispatchQueue.global().async {
-                            FriendPars.photo = try! Data.init(contentsOf: URL(string: friend.photo_max_orig)!)
+
+                        FriendPars.photo = friend.photo_max_orig
                         
-//                    }
-
-                        User.friend.append(FriendPars)
-
-                        realm.add(User)
+                        writeUser?.first?.friend.append(FriendPars)
                     }
                     
+                        realm.add(writeUser!)
+                        self.addedRealmFriends = realm.objects(FriendRealm.self)
+                    }
+                }
+                
+                
+                func cAll() {
+                    let realm = try! Realm()
+                    
                     do {
-                        try realm.commitWrite()
+                        try realm.write {
+                            realm.deleteAll()
+                        }
                     } catch {
                         print("\(error)")
                     }
-                    self.addedRealmFriends = realm.objects(FriendRealm.self)
                 }
                 
                 
-                func delete() {
-                    let realm = try! Realm()
+                func delete() -> Void {
                     
-                    try! realm.write() {
+                    let realm = try! Realm()
+                    let deleteFriends = realm.objects(UserRealm.self)
+
+//                    if (realm.objects(UserRealm.self).isEmpty) {
+//                        try! realm.write {
+//                            realm.add(UserRealm())
+//                        }
+//                        return
+//                    }
+                    
+                    realm.writeAsync(obj: deleteFriends) { (realm, deleteFriends) in
                         realm.deleteAll()
+                        realm.add(UserRealm())
                     }
                 }
-                
-                
-//                func onlineFilter() {
-//                    self.addedRealmFriends = try! Realm().objects(FriendRealm.self).filter("online = 1")
-//                    self.tableView.reloadData()
-//                }
-                
-                
-//                onlineFilter()
-//                createRealmData()
-                
-                
+//                cAll()
                 delete()
-//                let thread1 = DownloadData(tableView: self.tableView)
-                
-                DispatchQueue.main.async {
-                    createRealmData()
-                    self.tableView.reloadData()
-                }
-                
+                createRealmData()
 
                 print(friends.friends![0].photo_max_orig)
                } catch {

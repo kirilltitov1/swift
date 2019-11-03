@@ -22,9 +22,9 @@ class AddedCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
 
-    func setFreind(_ Name: String, _ Data: Data) {
+    func setFreind(_ Name: String?, _ PhotoURL: String?) {
         label?.text = Name
-        freindImage?.image = UIImage(data: Data)
+        freindImage?.image = UIImage(data: try! Data.init(contentsOf: URL(string: PhotoURL!)!))
     }
     
 }
