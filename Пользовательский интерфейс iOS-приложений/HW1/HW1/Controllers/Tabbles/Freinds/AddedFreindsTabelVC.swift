@@ -194,6 +194,10 @@ extension AddedFreindsTabelVC {
                     
                     let writeUser = realm.objects(UserRealm.self)
                     
+                    self.token = writeUser.observe { (changes: RealmCollectionChange) in
+                        self.tableView.reloadData()
+                    }
+                    
                     realm.writeAsync(obj: writeUser) { (realm, writeUser) in
                     for friend in friends.friends! {
 
