@@ -20,7 +20,7 @@ class AddedFreindsTabelVC: UITableViewController {
     
     @IBAction func onlineFilter() {
         
-        self.addedRealmFriends = try! Realm().objects(FriendRealm.self).filter("online = 1")
+//        self.addedRealmFriends = try! Realm().objects(FriendRealm.self).filter("online = 1")
         self.tableView.reloadData()
     }
     
@@ -194,9 +194,9 @@ extension AddedFreindsTabelVC {
                     
                     let writeUser = realm.objects(UserRealm.self)
                     
-                    self.token = writeUser.observe { (changes: RealmCollectionChange) in
-                        self.tableView.reloadData()
-                    }
+//                    self.token = writeUser.observe { (changes: RealmCollectionChange) in
+//                        self.tableView.reloadData()
+//                    }
                     
                     realm.writeAsync(obj: writeUser) { (realm, writeUser) in
                     for friend in friends.friends! {

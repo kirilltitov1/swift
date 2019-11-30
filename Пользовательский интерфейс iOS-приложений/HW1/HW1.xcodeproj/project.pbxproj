@@ -27,12 +27,12 @@
 		EF834CC92305877000FBC3AA /* CollectionViewControllerFromMoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF834CC82305877000FBC3AA /* CollectionViewControllerFromMoreVC.swift */; };
 		EF87568F23074F7500187B23 /* SettingsCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF87568E23074F7500187B23 /* SettingsCollectionVC.swift */; };
 		EF875694230763A900187B23 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF875693230763A900187B23 /* SettingsCell.swift */; };
+		EFA0BE39239184AA00DA12EC /* FriendData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA0BE35239184AA00DA12EC /* FriendData+CoreDataClass.swift */; };
+		EFA0BE3A239184AA00DA12EC /* FriendData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA0BE36239184AA00DA12EC /* FriendData+CoreDataProperties.swift */; };
+		EFA0BE3B239184AA00DA12EC /* UserData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA0BE37239184AA00DA12EC /* UserData+CoreDataClass.swift */; };
+		EFA0BE3C239184AA00DA12EC /* UserData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA0BE38239184AA00DA12EC /* UserData+CoreDataProperties.swift */; };
 		EFA2C4EC2314ACBF009CC6D7 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA2C4EB2314ACBF009CC6D7 /* Functions.swift */; };
 		EFA69FA7233FDA7D00BF1313 /* FriendItem.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EFA69FA5233FDA7D00BF1313 /* FriendItem.xcdatamodeld */; };
-		EFA6A0152340CA4D00BF1313 /* UserData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA6A0112340CA4D00BF1313 /* UserData+CoreDataClass.swift */; };
-		EFA6A0162340CA4D00BF1313 /* UserData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA6A0122340CA4D00BF1313 /* UserData+CoreDataProperties.swift */; };
-		EFA6A0172340CA4D00BF1313 /* FriendData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA6A0132340CA4D00BF1313 /* FriendData+CoreDataClass.swift */; };
-		EFA6A0182340CA4D00BF1313 /* FriendData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA6A0142340CA4D00BF1313 /* FriendData+CoreDataProperties.swift */; };
 		EFA6C87123061B9000768E64 /* BackgroundGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA6C87023061B9000768E64 /* BackgroundGradient.swift */; };
 		EFB0C0C9233915D100585E99 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB0C0C8233915D100585E99 /* User.swift */; };
 		EFB0C0CB2339177700585E99 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB0C0CA2339177700585E99 /* Photo.swift */; };
@@ -76,12 +76,12 @@
 		EF834CC82305877000FBC3AA /* CollectionViewControllerFromMoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewControllerFromMoreVC.swift; sourceTree = "<group>"; };
 		EF87568E23074F7500187B23 /* SettingsCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCollectionVC.swift; sourceTree = "<group>"; };
 		EF875693230763A900187B23 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		EFA0BE35239184AA00DA12EC /* FriendData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FriendData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		EFA0BE36239184AA00DA12EC /* FriendData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FriendData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		EFA0BE37239184AA00DA12EC /* UserData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		EFA0BE38239184AA00DA12EC /* UserData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		EFA2C4EB2314ACBF009CC6D7 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		EFA69FA6233FDA7D00BF1313 /* FriendItem.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FriendItem.xcdatamodel; sourceTree = "<group>"; };
-		EFA6A0112340CA4D00BF1313 /* UserData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserData+CoreDataClass.swift"; sourceTree = "<group>"; };
-		EFA6A0122340CA4D00BF1313 /* UserData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserData+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		EFA6A0132340CA4D00BF1313 /* FriendData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FriendData+CoreDataClass.swift"; sourceTree = "<group>"; };
-		EFA6A0142340CA4D00BF1313 /* FriendData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FriendData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		EFA6C87023061B9000768E64 /* BackgroundGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundGradient.swift; sourceTree = "<group>"; };
 		EFB0C0C8233915D100585E99 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		EFB0C0CA2339177700585E99 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
@@ -265,15 +265,15 @@
 			path = MoreVC;
 			sourceTree = "<group>";
 		};
-		EFA69FAD2340095C00BF1313 /* User->Freinds->ItemData */ = {
+		EFA69FAD2340095C00BF1313 /* User_Freinds_ItemData */ = {
 			isa = PBXGroup;
 			children = (
-				EFA6A0112340CA4D00BF1313 /* UserData+CoreDataClass.swift */,
-				EFA6A0122340CA4D00BF1313 /* UserData+CoreDataProperties.swift */,
-				EFA6A0132340CA4D00BF1313 /* FriendData+CoreDataClass.swift */,
-				EFA6A0142340CA4D00BF1313 /* FriendData+CoreDataProperties.swift */,
+				EFA0BE35239184AA00DA12EC /* FriendData+CoreDataClass.swift */,
+				EFA0BE36239184AA00DA12EC /* FriendData+CoreDataProperties.swift */,
+				EFA0BE37239184AA00DA12EC /* UserData+CoreDataClass.swift */,
+				EFA0BE38239184AA00DA12EC /* UserData+CoreDataProperties.swift */,
 			);
-			path = "User->Freinds->ItemData";
+			path = User_Freinds_ItemData;
 			sourceTree = "<group>";
 		};
 		EFBFFC19230430020068FBB5 /* ClassesForShowSegue */ = {
@@ -335,7 +335,7 @@
 				EFE284C223414CD1002736EE /* FriendRealm.swift */,
 				EFE284C423414E9D002736EE /* UserRealm.swift */,
 				EFF8936D22FCECC700458BAD /* AppDelegate.swift */,
-				EFA69FAD2340095C00BF1313 /* User->Freinds->ItemData */,
+				EFA69FAD2340095C00BF1313 /* User_Freinds_ItemData */,
 				EF1035CE233FD9A700363846 /* DataModels */,
 				EF87568A23074C3F00187B23 /* Controllers */,
 				EF87568923074BD400187B23 /* Views */,
@@ -470,36 +470,36 @@
 				EFBFFC1623036DC80068FBB5 /* SettingsGrid.swift in Sources */,
 				EFF8937022FCECC700458BAD /* ViewController.swift in Sources */,
 				EFB0C0CB2339177700585E99 /* Photo.swift in Sources */,
-				EFA6A0172340CA4D00BF1313 /* FriendData+CoreDataClass.swift in Sources */,
 				EFBFFC142303452E0068FBB5 /* MoreList.swift in Sources */,
 				EF7E12DA2309C4050038F549 /* AddedCell.swift in Sources */,
 				EFE5D911230863920094AF70 /* FreindsTableVC.swift in Sources */,
+				EFA0BE39239184AA00DA12EC /* FriendData+CoreDataClass.swift in Sources */,
 				EFB0C0CD2339293300585E99 /* Group.swift in Sources */,
 				EFB31893230AA62B001F2464 /* Account.swift in Sources */,
 				EFF8936E22FCECC700458BAD /* AppDelegate.swift in Sources */,
 				EF14378F232F6F2900B7F80F /* NewsVC+UIVollectionViewDataSource.swift in Sources */,
+				EFA0BE3B239184AA00DA12EC /* UserData+CoreDataClass.swift in Sources */,
 				EF44F1B62308AF7400EE00CC /* Cell.swift in Sources */,
-				EFA6A0182340CA4D00BF1313 /* FriendData+CoreDataProperties.swift in Sources */,
 				EFA69FA7233FDA7D00BF1313 /* FriendItem.xcdatamodeld in Sources */,
 				EF143796232F7C0800B7F80F /* TableViewCell.swift in Sources */,
 				EF87568F23074F7500187B23 /* SettingsCollectionVC.swift in Sources */,
 				EF834CC92305877000FBC3AA /* CollectionViewControllerFromMoreVC.swift in Sources */,
-				EFA6A0162340CA4D00BF1313 /* UserData+CoreDataProperties.swift in Sources */,
 				EFE284C323414CD1002736EE /* FriendRealm.swift in Sources */,
 				EF5FF3A82319922500549DA7 /* TopNewsCell.swift in Sources */,
 				EF26BCE12364B23C00D7F9E4 /* DownloadData.swift in Sources */,
 				EF4787EA2312E59100307E3F /* FreindCell.swift in Sources */,
 				EFA2C4EC2314ACBF009CC6D7 /* Functions.swift in Sources */,
 				EFBFFC1D230439370068FBB5 /* ForMoreClasses.swift in Sources */,
+				EFA0BE3A239184AA00DA12EC /* FriendData+CoreDataProperties.swift in Sources */,
 				EFBFFC1B2304303F0068FBB5 /* Freinds.swift in Sources */,
 				EF7E12D82309C3EC0038F549 /* AddedFreindsTabelVC.swift in Sources */,
 				EFBA1DA92326A54000A85620 /* NewsVC.swift in Sources */,
 				EF2C23C7232E55EA00A51922 /* Session.swift in Sources */,
+				EFA0BE3C239184AA00DA12EC /* UserData+CoreDataProperties.swift in Sources */,
 				EFDCD08B233CD46000EFEAE4 /* TabBarController.swift in Sources */,
 				EF0D3C6C2337D965006F7F78 /* ViewController2.swift in Sources */,
 				EFE284C523414E9D002736EE /* UserRealm.swift in Sources */,
 				EF834CC52304BFC100FBC3AA /* Model.swift in Sources */,
-				EFA6A0152340CA4D00BF1313 /* UserData+CoreDataClass.swift in Sources */,
 				EF143792232F774B00B7F80F /* NewsVC+UITableViewDataSource.swift in Sources */,
 				EFA6C87123061B9000768E64 /* BackgroundGradient.swift in Sources */,
 				EF875694230763A900187B23 /* SettingsCell.swift in Sources */,
