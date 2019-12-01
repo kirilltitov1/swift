@@ -188,32 +188,35 @@ extension AddedFreindsTabelVC {
                 
                 func createRealmData() {
                     
-                    let config = Realm.Configuration(deleteRealmIfMigrationNeeded: true)
-                    
-                    let realm = try! Realm(configuration: config)
-                    
-                    let writeUser = realm.objects(UserRealm.self)
+                    let writeUser = UserRealm()
                     
 //                    self.token = writeUser.observe { (changes: RealmCollectionChange) in
 //                        self.tableView.reloadData()
 //                    }
                     
-                    realm.writeAsync(obj: writeUser) { (realm, writeUser) in
-                    for friend in friends.friends! {
-
-                        let FriendPars = FriendRealm()
-                        FriendPars.id = friend.id
-                        FriendPars.last_name = friend.last_name
-                        FriendPars.name = friend.first_name
-                        FriendPars.online = Int8(friend.online)
-
-                        FriendPars.photo = friend.photo_max_orig
+                    self.realm?.writeAsync(obj: writeUser) { (realm, writeUser) in
                         
-                        writeUser?.first?.friend.append(FriendPars)
-                    }
+                        for friend in friends.friends! {
+
+                            let FriendPars = FriendRealm()
+                            FriendPars.id = friend.id
+                            FriendPars.last_name = friend.last_name
+                            FriendPars.name = friend.first_name
+                            FriendPars.online = Int8(friend.online)
+
+                            FriendPars.photo = friend.photo_max_orig
+                            
+                            writeUser?.friend.append(FriendPars)
+                        }
                     
-                        realm.add(writeUser!)
+                        
+                        try! realm.write {
+                            realm.add(writeUser!)
+                        }
                         self.addedRealmFriends = realm.objects(FriendRealm.self)
+//                        DispatchQueue.main.async {
+//                            self.tableView.reloadData()
+//                        }
                     }
                 }
                 
