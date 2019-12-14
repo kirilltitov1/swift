@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main MenuVC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainMenuVC" customModule="HowToBecomeMillioner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pn2-TY-o2h">
+                                <rect key="frame" x="141" y="394" width="132" height="118"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="308-As-tvD">
+                                        <rect key="frame" x="0.0" y="68" width="132" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="Результаты"/>
+                                        <connections>
+                                            <segue destination="Wm9-2h-jB5" kind="show" id="W6R-hh-1x3"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G25-RR-UxH">
+                                        <rect key="frame" x="24" y="18" width="86" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="Играть "/>
+                                        <connections>
+                                            <segue destination="dv0-Mu-PBJ" kind="show" identifier="GameVCSegue" id="LGP-uu-qfU"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="G25-RR-UxH" secondAttribute="trailing" constant="22" id="BBj-tZ-in4"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="131" id="BL4-nX-CIr"/>
+                                    <constraint firstAttribute="trailing" secondItem="308-As-tvD" secondAttribute="trailing" id="Bx1-8I-5gz"/>
+                                    <constraint firstAttribute="height" constant="118" id="OB5-st-x2B"/>
+                                    <constraint firstItem="308-As-tvD" firstAttribute="top" secondItem="G25-RR-UxH" secondAttribute="bottom" constant="8" id="XLT-v1-CkF"/>
+                                    <constraint firstItem="G25-RR-UxH" firstAttribute="leading" secondItem="pn2-TY-o2h" secondAttribute="leading" constant="24" id="ZYj-mO-IOm"/>
+                                    <constraint firstItem="308-As-tvD" firstAttribute="bottom" secondItem="pn2-TY-o2h" secondAttribute="bottomMargin" id="ZsR-Pf-FyC"/>
+                                    <constraint firstItem="308-As-tvD" firstAttribute="leading" secondItem="pn2-TY-o2h" secondAttribute="leading" id="jXU-7Y-JIK"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Результат последней сессии: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8VO-SN-BWF">
+                                <rect key="frame" x="8" y="841" width="242" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="pn2-TY-o2h" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="5El-vC-CvD"/>
+                            <constraint firstItem="8VO-SN-BWF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="Dsv-Wf-Cox"/>
+                            <constraint firstItem="pn2-TY-o2h" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NHa-cA-0O1"/>
+                            <constraint firstItem="8VO-SN-BWF" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="ahS-UB-4UE"/>
+                            <constraint firstItem="pn2-TY-o2h" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="yRO-Rd-J4a"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="88.392857142857139"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="aIF-PD-PIg">
+            <objects>
+                <viewController wantsFullScreenLayout="YES" id="Wm9-2h-jB5" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zpL-rh-Cyr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="mnm-GE-vYJ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="sky-Re-EFf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P2v-hm-neX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138" y="793"/>
+        </scene>
+        <!--GameVC-->
+        <scene sceneID="5Wa-fC-hfc">
+            <objects>
+                <viewController wantsFullScreenLayout="YES" id="dv0-Mu-PBJ" customClass="GameVC" customModule="HowToBecomeMillioner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mlo-c1-Tup">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zun-qi-Ara">
+                                <rect key="frame" x="0.0" y="648" width="414" height="160"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oEX-Kw-Jxa">
+                                        <rect key="frame" x="0.0" y="0.0" width="207" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="Ris-jw-o5g"/>
+                                            <constraint firstAttribute="width" constant="207" id="XFH-ce-p0J"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="loadNextQuestion:" destination="dv0-Mu-PBJ" eventType="touchUpInside" id="UKx-d5-dtK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KjD-I2-Awc">
+                                        <rect key="frame" x="207" y="0.0" width="207" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="207" id="dwg-dW-jfg"/>
+                                            <constraint firstAttribute="height" constant="80" id="wgN-Il-3ec"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="loadNextQuestion:" destination="dv0-Mu-PBJ" eventType="touchUpInside" id="kDr-CU-v76"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GIX-1a-Kfi">
+                                        <rect key="frame" x="0.0" y="80" width="207" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="207" id="Gv0-NW-p3h"/>
+                                            <constraint firstAttribute="height" constant="80" id="pL6-3W-sot"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="loadNextQuestion:" destination="dv0-Mu-PBJ" eventType="touchUpInside" id="fFl-pr-STt"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6PW-gc-eCY">
+                                        <rect key="frame" x="207" y="80" width="207" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="6y3-XD-wdJ"/>
+                                            <constraint firstAttribute="width" constant="207" id="JQv-Cu-CLg"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="loadNextQuestion:" destination="dv0-Mu-PBJ" eventType="touchUpInside" id="NIi-MC-1Y7"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="KjD-I2-Awc" secondAttribute="trailing" id="9HO-ct-b4B"/>
+                                    <constraint firstItem="oEX-Kw-Jxa" firstAttribute="leading" secondItem="zun-qi-Ara" secondAttribute="leading" id="9PV-on-ODd"/>
+                                    <constraint firstItem="oEX-Kw-Jxa" firstAttribute="top" secondItem="zun-qi-Ara" secondAttribute="top" id="B1K-aM-GcB"/>
+                                    <constraint firstItem="KjD-I2-Awc" firstAttribute="top" secondItem="zun-qi-Ara" secondAttribute="top" id="PDC-KJ-uH3"/>
+                                    <constraint firstAttribute="trailing" secondItem="6PW-gc-eCY" secondAttribute="trailing" id="aTd-Zz-0xQ"/>
+                                    <constraint firstAttribute="height" constant="160" id="cQV-Lw-rcA"/>
+                                    <constraint firstAttribute="width" constant="414" id="dGX-9n-HNI"/>
+                                    <constraint firstItem="GIX-1a-Kfi" firstAttribute="leading" secondItem="zun-qi-Ara" secondAttribute="leading" id="iqB-NS-96c"/>
+                                    <constraint firstAttribute="bottom" secondItem="GIX-1a-Kfi" secondAttribute="bottom" id="iwC-XI-QCc"/>
+                                    <constraint firstAttribute="bottom" secondItem="6PW-gc-eCY" secondAttribute="bottom" id="zYL-Nd-LJz"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IrF-z2-G7m">
+                                <rect key="frame" x="0.0" y="588" width="414" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="936-Zg-cqT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="zun-qi-Ara" firstAttribute="leading" secondItem="YuE-Jh-q6b" secondAttribute="leading" id="BRd-fw-H0B"/>
+                            <constraint firstItem="YuE-Jh-q6b" firstAttribute="trailing" secondItem="zun-qi-Ara" secondAttribute="trailing" id="Fb9-4y-ghR"/>
+                            <constraint firstItem="YuE-Jh-q6b" firstAttribute="trailing" secondItem="IrF-z2-G7m" secondAttribute="trailing" id="Id0-xQ-FDJ"/>
+                            <constraint firstItem="zun-qi-Ara" firstAttribute="top" secondItem="IrF-z2-G7m" secondAttribute="bottom" id="VXd-SE-xwx"/>
+                            <constraint firstItem="zun-qi-Ara" firstAttribute="bottom" secondItem="YuE-Jh-q6b" secondAttribute="bottom" id="emQ-Jz-Red"/>
+                            <constraint firstItem="IrF-z2-G7m" firstAttribute="leading" secondItem="YuE-Jh-q6b" secondAttribute="leading" id="vaY-Ok-1IW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="YuE-Jh-q6b"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="DZv-U3-4Ym"/>
+                    <connections>
+                        <outlet property="button1" destination="oEX-Kw-Jxa" id="A3q-uj-U6a"/>
+                        <outlet property="button2" destination="KjD-I2-Awc" id="orY-tv-w0Z"/>
+                        <outlet property="button3" destination="GIX-1a-Kfi" id="WRk-z0-E0I"/>
+                        <outlet property="button4" destination="6PW-gc-eCY" id="PU6-ef-nKP"/>
+                        <outlet property="labelQuestion" destination="IrF-z2-G7m" id="hyh-xH-LDD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gcu-BD-YoU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="900.00000000000011" y="87.723214285714278"/>
+        </scene>
+    </scenes>
+</document>
