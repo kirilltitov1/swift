@@ -9,7 +9,7 @@
 import UIKit
 
 protocol GameVCDelegate: class {
-    func endGame(withResult result: Int)
+    func endGame(withRecord record: Record)
 }
 
 class GameVC: UIViewController {
@@ -24,23 +24,38 @@ class GameVC: UIViewController {
     weak var delegate: GameVCDelegate?
     
     var questions = Questions().questions
+    var answer: String = ""
+
+    var record: Record = Record(data: Data(), value: 0)
+    weak var records = Records.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadNextQuestion(self)
+        loadNextQuestion()
     }
 
     
-    @IBAction func loadNextQuestion(_ sender: Any) {
+    @IBAction func buttonsPressed(_ sender: UIButton) {
+        if sender.titleLabel?.text == answer {
+            record.value += 1
+            loadNextQuestion()
+        } else {
+            loadNextQuestion()
+        }
+    }
+    
+    
+    func loadNextQuestion() {
         if let question = questions.popLast() {
+            answer = question.answer
             labelQuestion.text = question.question
             button1.setTitle(question.first, for: .normal)
             button2.setTitle(question.second, for: .normal)
             button3.setTitle(question.third, for: .normal)
             button4.setTitle(question.fourth, for: .normal)
         } else {
-            
+            endGame(withRecord: self.record)
         }
     }
     
@@ -57,8 +72,11 @@ class GameVC: UIViewController {
 
 //   MARK: - Extensions
 extension GameVC: GameVCDelegate {
-    func endGame(withResult result: Int) {
-        self.delegate?.endGame(withResult: result)
+    func endGame(withRecord record: Record) {
+        self.delegate?.endGame(withRecord: record)
+        var records = RecordsCaretaker().upload()
+        records.append(record)
+        RecordsCaretaker().save(records: records)
         self.dismiss(animated: true, completion: nil)
     }
 }

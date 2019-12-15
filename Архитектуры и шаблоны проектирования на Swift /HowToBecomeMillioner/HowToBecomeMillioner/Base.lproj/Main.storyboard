@@ -23,7 +23,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="Результаты"/>
                                         <connections>
-                                            <segue destination="Wm9-2h-jB5" kind="show" id="W6R-hh-1x3"/>
+                                            <segue destination="Sls-LT-PDm" kind="show" identifier="RecordsTVCSegue" id="nqR-k0-dtP"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G25-RR-UxH">
@@ -64,26 +64,56 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="resultLabel" destination="8VO-SN-BWF" id="qZ1-Le-L7J"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="88.392857142857139"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="aIF-PD-PIg">
+        <!--RecordsTVC-->
+        <scene sceneID="T0S-fR-7ND">
             <objects>
-                <viewController wantsFullScreenLayout="YES" id="Wm9-2h-jB5" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="zpL-rh-Cyr">
+                <tableViewController id="Sls-LT-PDm" customClass="RecordsTVC" customModule="HowToBecomeMillioner" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LAm-x5-Ay1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="mnm-GE-vYJ"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="sky-Re-EFf"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="P2v-hm-neX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecordCell" rowHeight="60" id="8KT-zZ-lb4">
+                                <rect key="frame" x="0.0" y="28" width="414" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8KT-zZ-lb4" id="Tp9-NQ-qJr">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6zy-xP-SY6">
+                                            <rect key="frame" x="20" y="11" width="374" height="38"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="6zy-xP-SY6" firstAttribute="top" secondItem="Tp9-NQ-qJr" secondAttribute="topMargin" id="G7k-We-ja1"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="6zy-xP-SY6" secondAttribute="trailing" id="NQx-24-vac"/>
+                                        <constraint firstItem="6zy-xP-SY6" firstAttribute="leading" secondItem="Tp9-NQ-qJr" secondAttribute="leadingMargin" id="i7h-IJ-SB1"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="6zy-xP-SY6" secondAttribute="bottom" id="yHb-wX-JOn"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Sls-LT-PDm" id="Lzu-6Q-NhW"/>
+                            <outlet property="delegate" destination="Sls-LT-PDm" id="D2K-PY-the"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="ccD-a8-pLq"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V5C-PV-0nD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138" y="793"/>
+            <point key="canvasLocation" x="138" y="782"/>
         </scene>
         <!--GameVC-->
         <scene sceneID="5Wa-fC-hfc">
@@ -104,7 +134,7 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <connections>
-                                            <action selector="loadNextQuestion:" destination="dv0-Mu-PBJ" eventType="touchUpInside" id="UKx-d5-dtK"/>
+                                            <action selector="buttonsPressed:" destination="dv0-Mu-PBJ" eventType="touchUpInside" id="hXF-mV-1YZ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KjD-I2-Awc">
@@ -115,7 +145,7 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <connections>
-                                            <action selector="loadNextQuestion:" destination="dv0-Mu-PBJ" eventType="touchUpInside" id="kDr-CU-v76"/>
+                                            <action selector="buttonsPressed:" destination="dv0-Mu-PBJ" eventType="touchUpInside" id="33L-PG-k9R"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GIX-1a-Kfi">
@@ -126,7 +156,7 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <connections>
-                                            <action selector="loadNextQuestion:" destination="dv0-Mu-PBJ" eventType="touchUpInside" id="fFl-pr-STt"/>
+                                            <action selector="buttonsPressed:" destination="dv0-Mu-PBJ" eventType="touchUpInside" id="fbc-kO-SR7"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6PW-gc-eCY">
@@ -137,7 +167,7 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <connections>
-                                            <action selector="loadNextQuestion:" destination="dv0-Mu-PBJ" eventType="touchUpInside" id="NIi-MC-1Y7"/>
+                                            <action selector="buttonsPressed:" destination="dv0-Mu-PBJ" eventType="touchUpInside" id="BBA-x4-PUM"/>
                                         </connections>
                                     </button>
                                 </subviews>

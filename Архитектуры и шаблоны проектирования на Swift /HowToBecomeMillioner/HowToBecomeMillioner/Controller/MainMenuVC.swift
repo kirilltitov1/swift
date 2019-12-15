@@ -9,6 +9,8 @@
 import UIKit
 
 class MainMenuVC: UIViewController {
+    
+    @IBOutlet weak var resultLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +30,11 @@ class MainMenuVC: UIViewController {
                 else { return }
             destination.delegate = self
             
+//        case "RecordsTVCSegue":
+//            guard let destination = segue.destination as? RecordsTVC
+//                else { return }
+//            destination
+            
         default:
             break
         }
@@ -35,8 +42,13 @@ class MainMenuVC: UIViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-
-
 }
 
 
+//  MARK: - Extensions
+
+extension MainMenuVC: GameVCDelegate {
+    func endGame(withRecord record: Record) {
+        resultLabel.text = "Результат последней сессии: " + String(record.value)
+     }
+}

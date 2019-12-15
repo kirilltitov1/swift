@@ -16,6 +16,10 @@
 		EF25AF262396EB45001BEA80 /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF25AF252396EB45001BEA80 /* Questions.swift */; };
 		EF9899E2239D39670065C275 /* GameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9899E1239D39660065C275 /* GameVC.swift */; };
 		EFBC3A2423A53F2D00B3EE0F /* MainMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBC3A2323A53F2D00B3EE0F /* MainMenuVC.swift */; };
+		EFBC3A2623A56DAD00B3EE0F /* Records.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBC3A2523A56DAD00B3EE0F /* Records.swift */; };
+		EFBC3A2823A56FE000B3EE0F /* GameCaretaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBC3A2723A56FE000B3EE0F /* GameCaretaker.swift */; };
+		EFBC3A2A23A5B77100B3EE0F /* RecordsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBC3A2923A5B77100B3EE0F /* RecordsTVC.swift */; };
+		EFBC3A2C23A5B97900B3EE0F /* RecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBC3A2B23A5B97900B3EE0F /* RecordCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		EF25AF252396EB45001BEA80 /* Questions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
 		EF9899E1239D39660065C275 /* GameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameVC.swift; sourceTree = "<group>"; };
 		EFBC3A2323A53F2D00B3EE0F /* MainMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuVC.swift; sourceTree = "<group>"; };
+		EFBC3A2523A56DAD00B3EE0F /* Records.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Records.swift; sourceTree = "<group>"; };
+		EFBC3A2723A56FE000B3EE0F /* GameCaretaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCaretaker.swift; sourceTree = "<group>"; };
+		EFBC3A2923A5B77100B3EE0F /* RecordsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsTVC.swift; sourceTree = "<group>"; };
+		EFBC3A2B23A5B97900B3EE0F /* RecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +105,8 @@
 			children = (
 				EF9899E1239D39660065C275 /* GameVC.swift */,
 				EFBC3A2323A53F2D00B3EE0F /* MainMenuVC.swift */,
+				EFBC3A2923A5B77100B3EE0F /* RecordsTVC.swift */,
+				EFBC3A2B23A5B97900B3EE0F /* RecordCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -104,6 +114,8 @@
 		EF25AF242396EADC001BEA80 /* Patterns */ = {
 			isa = PBXGroup;
 			children = (
+				EFBC3A2523A56DAD00B3EE0F /* Records.swift */,
+				EFBC3A2723A56FE000B3EE0F /* GameCaretaker.swift */,
 			);
 			path = Patterns;
 			sourceTree = "<group>";
@@ -187,10 +199,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFBC3A2A23A5B77100B3EE0F /* RecordsTVC.swift in Sources */,
 				EFBC3A2423A53F2D00B3EE0F /* MainMenuVC.swift in Sources */,
 				EF25AF152396EA7E001BEA80 /* HowToBecomeMillioner.xcdatamodeld in Sources */,
+				EFBC3A2823A56FE000B3EE0F /* GameCaretaker.swift in Sources */,
+				EFBC3A2C23A5B97900B3EE0F /* RecordCell.swift in Sources */,
 				EF25AF0B2396EA7E001BEA80 /* AppDelegate.swift in Sources */,
 				EF25AF262396EB45001BEA80 /* Questions.swift in Sources */,
+				EFBC3A2623A56DAD00B3EE0F /* Records.swift in Sources */,
 				EF9899E2239D39670065C275 /* GameVC.swift in Sources */,
 				EF25AF0D2396EA7E001BEA80 /* SceneDelegate.swift in Sources */,
 			);
