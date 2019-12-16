@@ -27,12 +27,12 @@ class RecordsTVC: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return Records.shared.getRecords().count
+        return RecordsCaretaker().upload().count
     }
 
     
@@ -40,10 +40,10 @@ class RecordsTVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecordCell", for: indexPath)
         
         
-        let records = Records.shared.getRecords()
-        label1.text = String(records[indexPath.row].value)
+        let records = RecordsCaretaker().upload()
+//        label1.text = String(records[indexPath.row].value)
         
-        cell.textLabel?.text = String(records[indexPath.row].value)
+        cell.textLabel?.text = String(records[indexPath.row].value) + "/6"
 
         return cell
     }

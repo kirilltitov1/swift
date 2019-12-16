@@ -53,6 +53,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="1HG-rB-Vx5">
+                                <rect key="frame" x="157.5" y="44" width="99" height="32"/>
+                                <segments>
+                                    <segment title="Easy"/>
+                                    <segment title="Hard"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -60,6 +67,8 @@
                             <constraint firstItem="8VO-SN-BWF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="Dsv-Wf-Cox"/>
                             <constraint firstItem="pn2-TY-o2h" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NHa-cA-0O1"/>
                             <constraint firstItem="8VO-SN-BWF" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="ahS-UB-4UE"/>
+                            <constraint firstItem="1HG-rB-Vx5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="c0C-Ev-IIi"/>
+                            <constraint firstItem="1HG-rB-Vx5" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="xAW-CD-woz"/>
                             <constraint firstItem="pn2-TY-o2h" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="yRO-Rd-J4a"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -87,20 +96,6 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8KT-zZ-lb4" id="Tp9-NQ-qJr">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6zy-xP-SY6">
-                                            <rect key="frame" x="20" y="11" width="374" height="38"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="6zy-xP-SY6" firstAttribute="top" secondItem="Tp9-NQ-qJr" secondAttribute="topMargin" id="G7k-We-ja1"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="6zy-xP-SY6" secondAttribute="trailing" id="NQx-24-vac"/>
-                                        <constraint firstItem="6zy-xP-SY6" firstAttribute="leading" secondItem="Tp9-NQ-qJr" secondAttribute="leadingMargin" id="i7h-IJ-SB1"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="6zy-xP-SY6" secondAttribute="bottom" id="yHb-wX-JOn"/>
-                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>

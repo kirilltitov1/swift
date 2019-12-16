@@ -21,6 +21,7 @@ class GameVC: UIViewController {
     @IBOutlet weak var button3: UIButton!
     @IBOutlet weak var button4: UIButton!
     
+    
     weak var delegate: GameVCDelegate?
     
     var questions = Questions().questions
@@ -28,6 +29,10 @@ class GameVC: UIViewController {
 
     var record: Record = Record(data: Data(), value: 0)
     weak var records = Records.shared
+    
+    enum Difficulty {
+        case easy, hard
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
