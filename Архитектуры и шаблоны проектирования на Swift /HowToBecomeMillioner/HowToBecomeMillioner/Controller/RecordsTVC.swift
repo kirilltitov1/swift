@@ -43,7 +43,7 @@ class RecordsTVC: UITableViewController {
         let records = RecordsCaretaker().upload()
 //        label1.text = String(records[indexPath.row].value)
         
-        cell.textLabel?.text = String(records[indexPath.row].value) + "/6"
+        cell.textLabel?.text = String(records[(records.count-1) - indexPath.row].value) + "/6"
 
         return cell
     }

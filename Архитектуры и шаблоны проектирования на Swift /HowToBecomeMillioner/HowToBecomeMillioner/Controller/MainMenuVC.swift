@@ -15,6 +15,7 @@ class MainMenuVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        updateResultLabel(withRecord: nil)
         // Do any additional setup after loading the view.
     }
     
@@ -30,18 +31,21 @@ class MainMenuVC: UIViewController {
                 else { return }
             destination.delegate = self
             
-//        case "RecordsTVCSegue":
-//            guard let destination = segue.destination as? RecordsTVC
-//                else { return }
-//            destination
-            
         default:
             break
         }
-        
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
+    
+    func updateResultLabel(withRecord record: Record?) {
+        if let value: Int = record?.value {
+// TODO: - исправить вылетание при конце игры поч то говорит что здесь “Unexpectedly found nil while implicitly unwrapping an Optional value“
+            resultLabel.text = "Результат последней сессии: " + (value == 0 ? "0" : "\(value)")
+        } else {
+            let records = RecordsCaretaker().upload()
+            resultLabel.text = "Результат последней сессии: " + (records.isEmpty ? "0" : String(records.last!.value))
+        }
+    }
+    
 }
 
 
@@ -49,6 +53,5 @@ class MainMenuVC: UIViewController {
 
 extension MainMenuVC: GameVCDelegate {
     func endGame(withRecord record: Record) {
-        resultLabel.text = "Результат последней сессии: " + String(record.value)
      }
 }

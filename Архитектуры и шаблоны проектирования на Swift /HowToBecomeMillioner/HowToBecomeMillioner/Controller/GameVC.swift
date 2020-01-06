@@ -37,21 +37,22 @@ class GameVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadNextQuestion()
+        loadNextQuestion(true)
     }
 
     
     @IBAction func buttonsPressed(_ sender: UIButton) {
         if sender.titleLabel?.text == answer {
             record.value += 1
-            loadNextQuestion()
+            loadNextQuestion(true)
         } else {
-            loadNextQuestion()
+            loadNextQuestion(false)
+            endGame(withRecord: self.record)
         }
     }
     
     
-    func loadNextQuestion() {
+    func loadNextQuestion(_ isLoad: Bool) {
         if let question = questions.popLast() {
             answer = question.answer
             labelQuestion.text = question.question
@@ -83,5 +84,6 @@ extension GameVC: GameVCDelegate {
         records.append(record)
         RecordsCaretaker().save(records: records)
         self.dismiss(animated: true, completion: nil)
+        MainMenuVC().updateResultLabel(withRecord: record)
     }
 }
