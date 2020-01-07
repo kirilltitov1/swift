@@ -37,13 +37,16 @@ class MainMenuVC: UIViewController {
     }
     
     func updateResultLabel(withRecord record: Record?) {
-        if let value: Int = record?.value {
-// TODO: - исправить вылетание при конце игры поч то говорит что здесь “Unexpectedly found nil while implicitly unwrapping an Optional value“
-            resultLabel.text = "Результат последней сессии: " + (value == 0 ? "0" : "\(value)")
+        var value = 0
+        
+        if let record = record {
+            value = record.value
         } else {
             let records = RecordsCaretaker().upload()
-            resultLabel.text = "Результат последней сессии: " + (records.isEmpty ? "0" : String(records.last!.value))
+            let isValueEmpty = records.isEmpty
+            value = isValueEmpty ? 0 : records.last!.value
         }
+        resultLabel.text = "Результат последней сессии: " + String(value)
     }
     
 }
@@ -53,5 +56,6 @@ class MainMenuVC: UIViewController {
 
 extension MainMenuVC: GameVCDelegate {
     func endGame(withRecord record: Record) {
+        resultLabel.text = "Результат последней сессии: " + String(record.value)
      }
 }

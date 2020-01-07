@@ -84,6 +84,5 @@ extension GameVC: GameVCDelegate {
         records.append(record)
         RecordsCaretaker().save(records: records)
         self.dismiss(animated: true, completion: nil)
-        MainMenuVC().updateResultLabel(withRecord: record)
     }
 }
