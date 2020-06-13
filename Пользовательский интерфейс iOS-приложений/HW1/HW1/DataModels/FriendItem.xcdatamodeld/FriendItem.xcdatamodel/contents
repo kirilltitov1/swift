@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14903" systemVersion="18G103" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="FriendData" representedClassName=".FriendData" syncable="YES">
+        <attribute name="name" attributeType="String"/>
+        <attribute name="online" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="photo" attributeType="Binary"/>
+        <attribute name="surname" attributeType="String"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="UserData" inverseName="friends" inverseEntity="UserData"/>
+    </entity>
+    <entity name="UserData" representedClassName=".UserData" syncable="YES">
+        <attribute name="friend" optional="YES" attributeType="Binary"/>
+        <relationship name="friends" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FriendData" inverseName="user" inverseEntity="FriendData"/>
+    </entity>
+    <elements>
+        <element name="FriendData" positionX="-63" positionY="-18" width="128" height="118"/>
+        <element name="UserData" positionX="112.734375" positionY="8.46875" width="128" height="73"/>
+    </elements>
+</model>
